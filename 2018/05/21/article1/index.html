@@ -108,18 +108,18 @@
 
 
 
-  <meta name="description" content="整理了一下git的常用命令 提交  12git pull origin master --allow-unrelated-histories(有冲突用这个)git push origin master  版本回退123git reset --hard HEAD^    //回退到上版本git reset --hard HEAD^^    //回退到上上版本git log   //查看提交日记">
+  <meta name="description" content="整理了一下git的常用命令提交12git pull origin master --allow-unrelated-histories(有冲突用这个)git push origin master 版本回退123git reset --hard HEAD^    //回退到上版本git reset --hard HEAD^^    //回退到上上版本git log   //查看提交日记  用git">
 <meta name="keywords" content="git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git常用命令">
 <meta property="og:url" content="https://zihanghuang.github.io/huangzh_blog/2018/05/21/article1/index.html">
 <meta property="og:site_name" content="我的笔记本">
-<meta property="og:description" content="整理了一下git的常用命令 提交  12git pull origin master --allow-unrelated-histories(有冲突用这个)git push origin master  版本回退123git reset --hard HEAD^    //回退到上版本git reset --hard HEAD^^    //回退到上上版本git log   //查看提交日记">
+<meta property="og:description" content="整理了一下git的常用命令提交12git pull origin master --allow-unrelated-histories(有冲突用这个)git push origin master 版本回退123git reset --hard HEAD^    //回退到上版本git reset --hard HEAD^^    //回退到上上版本git log   //查看提交日记  用git">
 <meta property="og:locale" content="chinese">
-<meta property="og:updated_time" content="2018-05-23T14:34:08.000Z">
+<meta property="og:updated_time" content="2018-05-25T14:29:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git常用命令">
-<meta name="twitter:description" content="整理了一下git的常用命令 提交  12git pull origin master --allow-unrelated-histories(有冲突用这个)git push origin master  版本回退123git reset --hard HEAD^    //回退到上版本git reset --hard HEAD^^    //回退到上上版本git log   //查看提交日记">
+<meta name="twitter:description" content="整理了一下git的常用命令提交12git pull origin master --allow-unrelated-histories(有冲突用这个)git push origin master 版本回退123git reset --hard HEAD^    //回退到上版本git reset --hard HEAD^^    //回退到上上版本git log   //查看提交日记  用git">
 
 
 
@@ -344,7 +344,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-05-23 22:34:08" itemprop="dateModified" datetime="2018-05-23T22:34:08+08:00">2018-05-23</time>
+                <time title="Modified: 2018-05-25 22:29:40" itemprop="dateModified" datetime="2018-05-25T22:29:40+08:00">2018-05-25</time>
               
             
           </span>
@@ -395,30 +395,15 @@
       
 
       
-        <h2 id="整理了一下git的常用命令"><a href="#整理了一下git的常用命令" class="headerlink" title="整理了一下git的常用命令"></a>整理了一下git的常用命令</h2><ul>
-<li><h3 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h3></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master --allow-unrelated-histories(有冲突用这个)</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
-<ul>
-<li><h3 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD^    //回退到上版本</span><br><span class="line">git reset --hard HEAD^^    //回退到上上版本</span><br><span class="line">git log   //查看提交日记</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+        <h2 id="整理了一下git的常用命令"><a href="#整理了一下git的常用命令" class="headerlink" title="整理了一下git的常用命令"></a>整理了一下git的常用命令</h2><h3 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master --allow-unrelated-histories(有冲突用这个)</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+<h3 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD^    //回退到上版本</span><br><span class="line">git reset --hard HEAD^^    //回退到上上版本</span><br><span class="line">git log   //查看提交日记</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>用<code>git reset --hard HEAD^</code>回退到add distributed版本时<br>再想恢复到append GPL，就必须找到append GPL的commit id。<br>Git提供了一个命令<code>git reflog</code>用来记录你的每一次命令</p>
 </blockquote>
-<ul>
-<li><h3 id="撤销命令"><a href="#撤销命令" class="headerlink" title="撤销命令"></a>撤销命令</h3></li>
-</ul>
-<p><code>git checkout -- readme.txt</code>意思就是，把readme.txt文件在工作区的修改全部撤销，这里有两种情况：<br>一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；<br>一种是readme.txt已经add到暂存区后，又作了修改，要先<code>git reset HEAD readmd.txt</code>，回到add前，然后再<code>git checkout -- readme.txt</code>，撤销修改就回到添加到暂存区后的状态。</p>
+<h3 id="撤销命令"><a href="#撤销命令" class="headerlink" title="撤销命令"></a>撤销命令</h3><p><code>git checkout -- readme.txt</code>意思就是，把readme.txt文件在工作区的修改全部撤销，这里有两种情况：<br>一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；<br>一种是readme.txt已经add到暂存区后，又作了修改，要先<code>git reset HEAD readmd.txt</code>，回到add前，然后再<code>git checkout -- readme.txt</code>，撤销修改就回到添加到暂存区后的状态。</p>
 <a id="more"></a>
-<ul>
-<li><h3 id="创建并切换到新分支"><a href="#创建并切换到新分支" class="headerlink" title="创建并切换到新分支"></a>创建并切换到新分支</h3></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b haha 创建新分支haha</span><br></pre></td></tr></table></figure>
-<ul>
-<li><h3 id="查看修改内容"><a href="#查看修改内容" class="headerlink" title="查看修改内容"></a>查看修改内容</h3></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git diff 查看当前没有add的内容的修改</span><br><span class="line">git diff --cached  查看已经add但是没有commit的内容修改</span><br></pre></td></tr></table></figure>
+<h3 id="创建并切换到新分支"><a href="#创建并切换到新分支" class="headerlink" title="创建并切换到新分支"></a>创建并切换到新分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b haha 创建新分支haha</span><br></pre></td></tr></table></figure>
+<h3 id="查看修改内容"><a href="#查看修改内容" class="headerlink" title="查看修改内容"></a>查看修改内容</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git diff 查看当前没有add的内容的修改</span><br><span class="line">git diff --cached  查看已经add但是没有commit的内容修改</span><br></pre></td></tr></table></figure>
 <!--–&gt;-->
       
     </div>
