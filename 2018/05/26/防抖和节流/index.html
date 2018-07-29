@@ -108,18 +108,18 @@
 
 
 
-  <meta name="description" content="整理了一下防抖和节流 防抖多次触发事件后，事件处理函数只执行一次，并且是在触发操作结束时执行，我们在监听滚动条位置，控制是否显示返回顶部按钮时，就可以将防抖函数应用其中。">
+  <meta name="description" content="整理了一下防抖和节流 防抖一般来说，多次触发事件后，事件处理函数只执行一次，并且是在触发操作结束时执行，我们在监听滚动条位置，控制是否显示返回顶部按钮时，就可以将防抖函数应用其中。">
 <meta name="keywords" content="前端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="防抖和节流">
 <meta property="og:url" content="hangzi123.club/2018/05/26/防抖和节流/index.html">
 <meta property="og:site_name" content="瓦尔德的森林">
-<meta property="og:description" content="整理了一下防抖和节流 防抖多次触发事件后，事件处理函数只执行一次，并且是在触发操作结束时执行，我们在监听滚动条位置，控制是否显示返回顶部按钮时，就可以将防抖函数应用其中。">
+<meta property="og:description" content="整理了一下防抖和节流 防抖一般来说，多次触发事件后，事件处理函数只执行一次，并且是在触发操作结束时执行，我们在监听滚动条位置，控制是否显示返回顶部按钮时，就可以将防抖函数应用其中。">
 <meta property="og:locale" content="chinese">
-<meta property="og:updated_time" content="2018-05-26T15:26:53.000Z">
+<meta property="og:updated_time" content="2018-07-29T06:12:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="防抖和节流">
-<meta name="twitter:description" content="整理了一下防抖和节流 防抖多次触发事件后，事件处理函数只执行一次，并且是在触发操作结束时执行，我们在监听滚动条位置，控制是否显示返回顶部按钮时，就可以将防抖函数应用其中。">
+<meta name="twitter:description" content="整理了一下防抖和节流 防抖一般来说，多次触发事件后，事件处理函数只执行一次，并且是在触发操作结束时执行，我们在监听滚动条位置，控制是否显示返回顶部按钮时，就可以将防抖函数应用其中。">
 
 
 
@@ -327,12 +327,24 @@
                 
               
 
-              <time title="Created: 2018-05-26 23:09:05 / Modified: 23:26:53" itemprop="dateCreated datePublished" datetime="2018-05-26T23:09:05+08:00">2018-05-26</time>
+              <time title="Created: 2018-05-26 23:09:05" itemprop="dateCreated datePublished" datetime="2018-05-26T23:09:05+08:00">2018-05-26</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-07-29 14:12:11" itemprop="dateModified" datetime="2018-07-29T14:12:11+08:00">2018-07-29</time>
               
             
           </span>
@@ -384,7 +396,7 @@
 
       
         <p>整理了一下防抖和节流</p>
-<h3 id="防抖"><a href="#防抖" class="headerlink" title="防抖"></a>防抖</h3><p>多次触发事件后，事件处理函数只执行一次，并且是在触发操作结束时执行，我们在监听滚动条位置，控制是否显示返回顶部按钮时，就可以将防抖函数应用其中。</p>
+<h3 id="防抖"><a href="#防抖" class="headerlink" title="防抖"></a>防抖</h3><p>一般来说，多次触发事件后，事件处理函数只执行一次，并且是在触发操作结束时执行，我们在监听滚动条位置，控制是否显示返回顶部按钮时，就可以将防抖函数应用其中。</p>
 <a id="more"></a>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//定义一个操作函数</span><br><span class="line">function todo()&#123;</span><br><span class="line">    console.log(&apos;date:&apos; + new Date())</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function fangdou(callback, time)&#123;</span><br><span class="line">    var timer;</span><br><span class="line">    return function()&#123;</span><br><span class="line">        clearTimeout(timer);</span><br><span class="line">        timer = setTimeout(function()&#123;</span><br><span class="line">            callback()</span><br><span class="line">        &#125;, time)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">window.addEventListener(&apos;scroll&apos;, fangdou(todo,50))</span><br></pre></td></tr></table></figure>
 <h3 id="节流"><a href="#节流" class="headerlink" title="节流"></a>节流</h3><p>借助flag标志和setTimeout实现在一定时间内，只执行一次方法，只有上一次函数执行后，过了规定的时间间隔，才能进行下一次的函数调用。</p>
