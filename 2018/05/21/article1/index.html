@@ -108,18 +108,18 @@
 
 
 
-  <meta name="description" content="整理了一下git的常用命令 提交12git pull origin master --allow-unrelated-histories(有冲突用这个)git push origin master">
+  <meta name="description" content="整理了一下git的常用命令 提交12git pull origin master --allow-unrelated-histories(让本地仓库和远程仓库链接上，并拉取远程仓库)git push origin master">
 <meta name="keywords" content="git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git常用命令">
 <meta property="og:url" content="https://zihanghuang.github.io/huangzh_blog/2018/05/21/article1/index.html">
 <meta property="og:site_name" content="瓦尔德的森林">
-<meta property="og:description" content="整理了一下git的常用命令 提交12git pull origin master --allow-unrelated-histories(有冲突用这个)git push origin master">
+<meta property="og:description" content="整理了一下git的常用命令 提交12git pull origin master --allow-unrelated-histories(让本地仓库和远程仓库链接上，并拉取远程仓库)git push origin master">
 <meta property="og:locale" content="chinese">
-<meta property="og:updated_time" content="2018-12-15T11:48:24.000Z">
+<meta property="og:updated_time" content="2018-12-20T07:58:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git常用命令">
-<meta name="twitter:description" content="整理了一下git的常用命令 提交12git pull origin master --allow-unrelated-histories(有冲突用这个)git push origin master">
+<meta name="twitter:description" content="整理了一下git的常用命令 提交12git pull origin master --allow-unrelated-histories(让本地仓库和远程仓库链接上，并拉取远程仓库)git push origin master">
 
 
 
@@ -200,7 +200,7 @@
     </div>
     
       
-        <p class="site-subtitle">Look at the stars. Look how they shine for you.</p>
+        <p class="site-subtitle">曾沿着雪路浪游 为何为好事泪流</p>
       
     
   </div>
@@ -360,7 +360,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-12-15 19:48:24" itemprop="dateModified" datetime="2018-12-15T19:48:24+08:00">2018-12-15</time>
+                <time title="Modified: 2018-12-20 15:58:34" itemprop="dateModified" datetime="2018-12-20T15:58:34+08:00">2018-12-20</time>
               
             
           </span>
@@ -412,11 +412,11 @@
 
       
         <p>整理了一下git的常用命令</p>
-<h3 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master --allow-unrelated-histories(有冲突用这个)</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+<h3 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master --allow-unrelated-histories(让本地仓库和远程仓库链接上，并拉取远程仓库)</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <h3 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD^    //回退到上版本</span><br><span class="line">git reset --hard HEAD^^    //回退到上上版本</span><br><span class="line">git log   //查看提交日记</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>用<code>git reset --hard HEAD^</code>回退到add distributed版本时<br>再想恢复到append GPL，就必须找到append GPL的commit id。<br>Git提供了一个命令<code>git reflog</code>用来记录你的每一次命令</p>
+<p>用<code>git reset --hard HEAD^</code> 回退到某一个以前版本后，再git log已经看不到新的版本。如果想撤销回退，就必须找到append GPL的commit id。<br>当你命令行界面还没关闭时，你可以往上看那个新版本的commit id，然后再<code>git reset --hard 版本号</code>。<br>如果已经关了界面，Git提供了一个命令<code>git reflog</code>用来记录你的每一次命令，你可以找到那个新版本的commit id。</p>
 </blockquote>
 <h3 id="撤销命令"><a href="#撤销命令" class="headerlink" title="撤销命令"></a>撤销命令</h3><p><code>git checkout -- readme.txt</code>意思就是，把readme.txt文件在工作区的修改全部撤销，这里有两种情况：<br>一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；<br>一种是readme.txt已经add到暂存区后，又作了修改，要先<code>git reset HEAD readmd.txt</code>，回到add前，然后再<code>git checkout -- readme.txt</code>，撤销修改就回到添加到暂存区后的状态。</p>
 <h3 id="创建并切换到新分支"><a href="#创建并切换到新分支" class="headerlink" title="创建并切换到新分支"></a>创建并切换到新分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b haha 创建新分支haha</span><br></pre></td></tr></table></figure>
@@ -662,7 +662,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
