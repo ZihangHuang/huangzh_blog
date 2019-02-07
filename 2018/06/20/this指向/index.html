@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="瓦尔德的森林">
 <meta property="og:description" content="学习js的过程中，this的指向是绕不过去的坎，因为有时候会让人感到有点乱，比如说： 123456789101112131415161718var name = 1;var people = &amp;#123;	name: 2,	getName: function()&amp;#123;		return this.name;	&amp;#125;,	son: &amp;#123;		name: 3,		getName: fun">
 <meta property="og:locale" content="chinese">
-<meta property="og:updated_time" content="2018-06-20T10:31:16.000Z">
+<meta property="og:updated_time" content="2019-01-27T09:34:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="this指向">
 <meta name="twitter:description" content="学习js的过程中，this的指向是绕不过去的坎，因为有时候会让人感到有点乱，比如说： 123456789101112131415161718var name = 1;var people = &amp;#123;	name: 2,	getName: function()&amp;#123;		return this.name;	&amp;#125;,	son: &amp;#123;		name: 3,		getName: fun">
@@ -200,7 +200,7 @@
     </div>
     
       
-        <p class="site-subtitle">曾沿着雪路浪游 为何为好事泪流</p>
+        <p class="site-subtitle">我以为自己这一生的光亮，就只有自己周围的那几许，而实际上，就像这小木屋里的灯光一样，远比我想象得多得多。而且，那些光芒似乎并不跟从我的意识，它们就像这灯火一般，兀自在各处闪亮，将我的生命延续下去。</p>
       
     
   </div>
@@ -343,12 +343,24 @@
                 
               
 
-              <time title="Created: 2018-06-20 18:15:50 / Modified: 18:31:16" itemprop="dateCreated datePublished" datetime="2018-06-20T18:15:50+08:00">2018-06-20</time>
+              <time title="Created: 2018-06-20 18:15:50" itemprop="dateCreated datePublished" datetime="2018-06-20T18:15:50+08:00">2018-06-20</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-01-27 17:34:37" itemprop="dateModified" datetime="2019-01-27T17:34:37+08:00">2019-01-27</time>
               
             
           </span>
@@ -407,8 +419,9 @@
 <p>因为a的this为window，所以为window.name，而b的this是people。</p>
 <p>继续看</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(b.getName()); // 3      // b的this为son，son.name = 3</span><br><span class="line">console.log(people.son.getName()); // 3   //getName为son的直接调用，所以也为son.name</span><br></pre></td></tr></table></figure>
-<p>通常意义上this指针指向为最后调用它的对象。这里需要注意的一点就是如果返回值是一个对象，那么this指向的就是那个返回的对象，如果返回值不是一个对象那么this还是指向函数的实例，例子如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function getName()&#123;  </span><br><span class="line">    this.name = 1;  </span><br><span class="line">    return &#123;&#125;; // 返回对象</span><br><span class="line">&#125;</span><br><span class="line">var a = new getName;  </span><br><span class="line">console.log(a.name); //undefined</span><br><span class="line"></span><br><span class="line">function getName()&#123;  </span><br><span class="line">    this.name = 1;  </span><br><span class="line">    return 2; // 返回非对象</span><br><span class="line">&#125;</span><br><span class="line">var d = new getName;  </span><br><span class="line">console.log(d.name); //1</span><br></pre></td></tr></table></figure>
+<p>在实例化构造函数时，如果返回值是一个对象，那么this指向的就是那个返回的对象，如果返回值不是一个对象那么this还是指向函数的实例，例子如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function GetName()&#123;  </span><br><span class="line">    this.name = 1;  </span><br><span class="line">    return &#123;&#125;; // 返回对象</span><br><span class="line">&#125;</span><br><span class="line">var a = new getName;  </span><br><span class="line">console.log(a.name); //undefined</span><br><span class="line"></span><br><span class="line">function GetName()&#123;  </span><br><span class="line">    this.name = 1;  </span><br><span class="line">    return 2; // 返回非对象</span><br><span class="line">&#125;</span><br><span class="line">var d = new getName;  </span><br><span class="line">console.log(d.name); //1</span><br></pre></td></tr></table></figure>
+<p>回调函数也会导致this丢失：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">window.name = &apos;window jack&apos;</span><br><span class="line">var obj = &#123;</span><br><span class="line">    name: &apos;obj jack&apos;,</span><br><span class="line">    show: function()&#123;</span><br><span class="line">    console.log(this.name)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">obj.show() //obj jack</span><br><span class="line"></span><br><span class="line">function fun(fn)&#123;</span><br><span class="line">    fn()</span><br><span class="line">&#125;</span><br><span class="line">fun(obj.show) //window jack</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
