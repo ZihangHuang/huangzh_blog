@@ -108,24 +108,25 @@
 
 
 
-  <meta name="description" content="&amp;emsp;&amp;emsp;风往哪里吹，哪里的天就黑了。星星在哪里闪，哪里的天就亮了。你往哪里走，哪里的我便沉默了。&amp;emsp;&amp;emsp;但是我不能明，不能明白这一切，不能明白天为什么还是黑的，星星还是没有出现。偶然的一阵风吹过，带来一时的迷乱，令我不能自已。&amp;emsp;&amp;emsp;然而我不能忍，不能忍受所谓尔尔。世界是美好的，令人沉醉的。在这美好与沉醉之中，有一种不适感，这令我困惑，难以自持。&amp;">
+  <meta name="description" content="generator函数的两种执行管理方式： 基于Thunk函数">
+<meta name="keywords" content="前端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="风声">
-<meta property="og:url" content="https://zihanghuang.github.io/huangzh_blog/2018/12/03/风声/index.html">
+<meta property="og:title" content="generator函数执行管理">
+<meta property="og:url" content="https://zihanghuang.github.io/huangzh_blog/2019/03/11/generator函数执行管理/index.html">
 <meta property="og:site_name" content="瓦尔德的森林">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;风往哪里吹，哪里的天就黑了。星星在哪里闪，哪里的天就亮了。你往哪里走，哪里的我便沉默了。&amp;emsp;&amp;emsp;但是我不能明，不能明白这一切，不能明白天为什么还是黑的，星星还是没有出现。偶然的一阵风吹过，带来一时的迷乱，令我不能自已。&amp;emsp;&amp;emsp;然而我不能忍，不能忍受所谓尔尔。世界是美好的，令人沉醉的。在这美好与沉醉之中，有一种不适感，这令我困惑，难以自持。&amp;">
+<meta property="og:description" content="generator函数的两种执行管理方式： 基于Thunk函数">
 <meta property="og:locale" content="chinese">
-<meta property="og:updated_time" content="2018-12-03T13:14:26.000Z">
+<meta property="og:updated_time" content="2019-03-11T02:38:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="风声">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;风往哪里吹，哪里的天就黑了。星星在哪里闪，哪里的天就亮了。你往哪里走，哪里的我便沉默了。&amp;emsp;&amp;emsp;但是我不能明，不能明白这一切，不能明白天为什么还是黑的，星星还是没有出现。偶然的一阵风吹过，带来一时的迷乱，令我不能自已。&amp;emsp;&amp;emsp;然而我不能忍，不能忍受所谓尔尔。世界是美好的，令人沉醉的。在这美好与沉醉之中，有一种不适感，这令我困惑，难以自持。&amp;">
+<meta name="twitter:title" content="generator函数执行管理">
+<meta name="twitter:description" content="generator函数的两种执行管理方式： 基于Thunk函数">
 
 
 
 
 
 
-  <link rel="canonical" href="https://zihanghuang.github.io/huangzh_blog/2018/12/03/风声/"/>
+  <link rel="canonical" href="https://zihanghuang.github.io/huangzh_blog/2019/03/11/generator函数执行管理/"/>
 
 
 
@@ -135,7 +136,7 @@
   };
 </script>
 
-  <title>风声 | 瓦尔德的森林</title>
+  <title>generator函数执行管理 | 瓦尔德的森林</title>
   
 
 
@@ -300,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zihanghuang.github.io/huangzh_blog/2018/12/03/风声/">
+    <link itemprop="mainEntityOfPage" href="https://zihanghuang.github.io/huangzh_blog/2019/03/11/generator函数执行管理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="BoBo">
@@ -317,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">风声
+          <h1 class="post-title" itemprop="name headline">generator函数执行管理
               
             
           </h1>
@@ -342,7 +343,7 @@
                 
               
 
-              <time title="Created: 2018-12-03 21:00:59 / Modified: 21:14:26" itemprop="dateCreated datePublished" datetime="2018-12-03T21:00:59+08:00">2018-12-03</time>
+              <time title="Created: 2019-03-11 10:33:03 / Modified: 10:38:26" itemprop="dateCreated datePublished" datetime="2019-03-11T10:33:03+08:00">2019-03-11</time>
             
 
             
@@ -364,7 +365,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/心情/" itemprop="url" rel="index"><span itemprop="name">心情</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
 
                 
                 
@@ -398,9 +399,10 @@
       
 
       
-        <a id="more"></a>
-<p>&emsp;&emsp;风往哪里吹，哪里的天就黑了。星星在哪里闪，哪里的天就亮了。你往哪里走，哪里的我便沉默了。<br>&emsp;&emsp;但是我不能明，不能明白这一切，不能明白天为什么还是黑的，星星还是没有出现。偶然的一阵风吹过，带来一时的迷乱，令我不能自已。<br>&emsp;&emsp;然而我不能忍，不能忍受所谓尔尔。世界是美好的，令人沉醉的。在这美好与沉醉之中，有一种不适感，这令我困惑，难以自持。<br>&emsp;&emsp;所以我沉默，愈沉默愈说愈多的话。这话令我感到欣慰，然而总有一丝悲哀。仿佛这是从天上而来，带着一个使命，来使我枉然，以至顿悟。<br>&emsp;&emsp;我倾听那风声，风声中带有一时的情绪。那情绪不能持久，而变幻莫测。在这变化中我时而狂笑，时而哭泣，时而分明。我不能看清这世界，这世界是一阵风声，风有尘埃，永不落败，令我癫狂不已。<br>&emsp;&emsp;我自随风而去。</p>
-
+        <p>generator函数的两种执行管理方式：</p>
+<h3 id="基于Thunk函数"><a href="#基于Thunk函数" class="headerlink" title="基于Thunk函数"></a>基于Thunk函数</h3><a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line">function thunkify(fn) &#123;</span><br><span class="line">    return function() &#123;</span><br><span class="line">        var args = new Array(arguments.length);</span><br><span class="line">        var ctx = this;</span><br><span class="line"></span><br><span class="line">        for (var i = 0; i &lt; args.length; ++i) &#123;</span><br><span class="line">            args[i] = arguments[i];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return function(cb) &#123;</span><br><span class="line">            var called;</span><br><span class="line"></span><br><span class="line">            args.push(function() &#123;</span><br><span class="line">                if (called) return;</span><br><span class="line">                called = true;</span><br><span class="line">                cb.apply(null, arguments);</span><br><span class="line">            &#125;);</span><br><span class="line"></span><br><span class="line">            try &#123;</span><br><span class="line">                fn.apply(ctx, args);</span><br><span class="line">            &#125; catch (err) &#123;</span><br><span class="line">                cb(err);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var readBook = function(fileName, callback) &#123;</span><br><span class="line">    setTimeout(function() &#123;</span><br><span class="line">        callback(&apos;aa:&apos; + fileName);</span><br><span class="line">    &#125;, 1000)</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var readBookThunk = thunkify(readBook)</span><br><span class="line"></span><br><span class="line">//或者不借助Thunk函数，手动包装自己的函数</span><br><span class="line">// var readBookThunk = function(fileName)&#123;</span><br><span class="line">//   return function(callback)&#123;</span><br><span class="line">//     setTimeout(function() &#123;</span><br><span class="line">//         callback(&apos;aa:&apos; + fileName);</span><br><span class="line">//     &#125;, 1000)</span><br><span class="line">//   &#125;</span><br><span class="line">// &#125;</span><br><span class="line"></span><br><span class="line">var gen = function*() &#123;</span><br><span class="line">    var r1 = yield readBookThunk(&apos;/etc/fstab&apos;);</span><br><span class="line">    console.log(r1.toString());</span><br><span class="line"></span><br><span class="line">    var r2 = yield readBookThunk(&apos;/etc/shells&apos;);</span><br><span class="line">    console.log(r2.toString());</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//执行方式1：手动执行</span><br><span class="line">// var g = gen();</span><br><span class="line"></span><br><span class="line">// var r1 = g.next();</span><br><span class="line">// r1.value(function(data) &#123;</span><br><span class="line">//     var r2 = g.next(data);</span><br><span class="line"></span><br><span class="line">//     r2.value(function(data) &#123;</span><br><span class="line">//         g.next(data);</span><br><span class="line">//     &#125;);</span><br><span class="line">// &#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//执行方式2：自动管理执行</span><br><span class="line">function run(gen) &#123;</span><br><span class="line">    var g = gen();</span><br><span class="line"></span><br><span class="line">    function next(data) &#123;</span><br><span class="line">        var result = g.next(data);</span><br><span class="line">        if (result.done) return;</span><br><span class="line">        result.value(function(data) &#123;</span><br><span class="line">            next(data)</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    next();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">run(gen)</span><br></pre></td></tr></table></figure>
+<h3 id="基于Promise"><a href="#基于Promise" class="headerlink" title="基于Promise"></a>基于Promise</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">var readFile = function(fileName) &#123;</span><br><span class="line">    return new Promise(function(resolve, reject) &#123;</span><br><span class="line"></span><br><span class="line">        setTimeout(function() &#123;</span><br><span class="line">            resolve(&apos;aa:&apos; + fileName);</span><br><span class="line">        &#125;, 1000)</span><br><span class="line"></span><br><span class="line">    &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var gen2 = function*() &#123;</span><br><span class="line"></span><br><span class="line">    // var f1 = yield readFile(&apos;/etc/fstab&apos;);</span><br><span class="line">    // var f2 = yield readFile(&apos;/etc/shells&apos;);</span><br><span class="line"></span><br><span class="line">    // console.log(f1.toString());</span><br><span class="line">    // console.log(f2.toString());</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    var obj = &#123;</span><br><span class="line">        a: yield readFile(&apos;/etc/fstab&apos;),</span><br><span class="line">        b: yield readFile(&apos;/etc/shells&apos;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    console.log(obj)</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">function run2(gen) &#123;</span><br><span class="line">    var g = gen()</span><br><span class="line"></span><br><span class="line">    function next(data) &#123;</span><br><span class="line">        var r = g.next(data)</span><br><span class="line">        if (r.done) return</span><br><span class="line"></span><br><span class="line">        r.value.then((data) =&gt; &#123;</span><br><span class="line">            next(data)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    next()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">run2(gen2)</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -418,6 +420,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/前端/" rel="tag"># 前端</a>
+          
+        </div>
+      
 
       
       
@@ -427,8 +435,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/18/基本的排序算法/" rel="next" title="基本的排序和查找算法">
-                <i class="fa fa-chevron-left"></i> 基本的排序和查找算法
+              <a href="/2018/12/15/vue项目代码规范和格式化神器/" rel="next" title="vue项目代码规范和格式化神器">
+                <i class="fa fa-chevron-left"></i> vue项目代码规范和格式化神器
               </a>
             
           </div>
@@ -436,10 +444,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/15/vue项目代码规范和格式化神器/" rel="prev" title="vue项目代码规范和格式化神器">
-                vue项目代码规范和格式化神器 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -493,8 +497,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -600,6 +613,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基于Thunk函数"><span class="nav-number">1.</span> <span class="nav-text">基于Thunk函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于Promise"><span class="nav-number">2.</span> <span class="nav-text">基于Promise</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
