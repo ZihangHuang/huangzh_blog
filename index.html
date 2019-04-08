@@ -25,6 +25,12 @@
 
 
 
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
 
 
 
@@ -300,6 +306,168 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zihanghuang.github.io/huangzh_blog/2019/04/04/Typescript笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="BoBo">
+      <meta itemprop="description" content="前端，技术，文学">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="瓦尔德的森林">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/04/Typescript笔记/" itemprop="url">
+                  Typescript笔记
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-04-04 10:26:52 / Modified: 12:12:29" itemprop="dateCreated datePublished" datetime="2019-04-04T10:26:52+08:00">2019-04-04</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="Typescript-四种常用内置的映射类型："><a href="#Typescript-四种常用内置的映射类型：" class="headerlink" title="Typescript 四种常用内置的映射类型："></a>Typescript 四种常用内置的映射类型：</h3><h4 id="Recode"><a href="#Recode" class="headerlink" title="Recode"></a>Recode</h4><p>根据 K 中的所有可能值来设置 key 以及 value 的类型<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Person2&#123;</span><br><span class="line">    name: <span class="built_in">string</span></span><br><span class="line">    age: <span class="built_in">number</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">type</span> RecodeProps = Record&lt;<span class="string">'prop1'</span> | <span class="string">'prop2'</span> | <span class="string">'prop3'</span>, <span class="built_in">string</span>&gt;</span><br><span class="line"><span class="keyword">let</span> per1: RecodeProps = &#123;</span><br><span class="line">    prop1: <span class="string">'abc'</span>,</span><br><span class="line">    prop2: <span class="string">'abc'</span>,</span><br><span class="line">    prop3: <span class="string">'bcd'</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/04/04/Typescript笔记/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zihanghuang.github.io/huangzh_blog/2019/03/11/generator函数执行管理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -346,12 +514,24 @@
                 
               
 
-              <time title="Created: 2019-03-11 10:33:03 / Modified: 10:38:26" itemprop="dateCreated datePublished" datetime="2019-03-11T10:33:03+08:00">2019-03-11</time>
+              <time title="Created: 2019-03-11 10:33:03" itemprop="dateCreated datePublished" datetime="2019-03-11T10:33:03+08:00">2019-03-11</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-04-03 18:19:53" itemprop="dateModified" datetime="2019-04-03T18:19:53+08:00">2019-04-03</time>
               
             
           </span>
@@ -526,7 +706,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-02-07 12:01:42" itemprop="dateModified" datetime="2019-02-07T12:01:42+08:00">2019-02-07</time>
+                <time title="Modified: 2019-04-03 18:24:47" itemprop="dateModified" datetime="2019-04-03T18:24:47+08:00">2019-04-03</time>
               
             
           </span>
@@ -859,7 +1039,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-09-18 21:52:38" itemprop="dateModified" datetime="2018-09-18T21:52:38+08:00">2018-09-18</time>
+                <time title="Modified: 2019-04-03 18:25:14" itemprop="dateModified" datetime="2019-04-03T18:25:14+08:00">2019-04-03</time>
               
             
           </span>
@@ -1017,12 +1197,24 @@
                 
               
 
-              <time title="Created: 2018-06-30 18:45:19 / Modified: 22:54:16" itemprop="dateCreated datePublished" datetime="2018-06-30T18:45:19+08:00">2018-06-30</time>
+              <time title="Created: 2018-06-30 18:45:19" itemprop="dateCreated datePublished" datetime="2018-06-30T18:45:19+08:00">2018-06-30</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-04-03 18:21:38" itemprop="dateModified" datetime="2019-04-03T18:21:38+08:00">2019-04-03</time>
               
             
           </span>
@@ -1197,7 +1389,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-01-27 17:34:37" itemprop="dateModified" datetime="2019-01-27T17:34:37+08:00">2019-01-27</time>
+                <time title="Modified: 2019-04-03 18:24:19" itemprop="dateModified" datetime="2019-04-03T18:24:19+08:00">2019-04-03</time>
               
             
           </span>
@@ -1355,12 +1547,24 @@
                 
               
 
-              <time title="Created: 2018-06-13 19:43:02 / Modified: 20:48:06" itemprop="dateCreated datePublished" datetime="2018-06-13T19:43:02+08:00">2018-06-13</time>
+              <time title="Created: 2018-06-13 19:43:02" itemprop="dateCreated datePublished" datetime="2018-06-13T19:43:02+08:00">2018-06-13</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-04-03 18:22:30" itemprop="dateModified" datetime="2019-04-03T18:22:30+08:00">2019-04-03</time>
               
             
           </span>
@@ -1534,7 +1738,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-07-29 14:07:24" itemprop="dateModified" datetime="2018-07-29T14:07:24+08:00">2018-07-29</time>
+                <time title="Modified: 2019-04-03 18:25:24" itemprop="dateModified" datetime="2019-04-03T18:25:24+08:00">2019-04-03</time>
               
             
           </span>
@@ -1709,7 +1913,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-01-11 20:08:11" itemprop="dateModified" datetime="2019-01-11T20:08:11+08:00">2019-01-11</time>
+                <time title="Modified: 2019-04-03 18:25:30" itemprop="dateModified" datetime="2019-04-03T18:25:30+08:00">2019-04-03</time>
               
             
           </span>
@@ -1806,184 +2010,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zihanghuang.github.io/huangzh_blog/2018/05/21/article1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="BoBo">
-      <meta itemprop="description" content="前端，技术，文学">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="瓦尔德的森林">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/21/article1/" itemprop="url">
-                  git常用命令
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-05-21 22:39:17" itemprop="dateCreated datePublished" datetime="2018-05-21T22:39:17+08:00">2018-05-21</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-12-20 15:58:34" itemprop="dateModified" datetime="2018-12-20T15:58:34+08:00">2018-12-20</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>整理了一下git的常用命令</p>
-<h3 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master --allow-unrelated-histories(让本地仓库和远程仓库链接上，并拉取远程仓库)</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/21/article1/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
+
 
 
           </div>
@@ -2024,7 +2057,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2199,6 +2232,8 @@
 
 
 
+  
+
 
 
 
@@ -2224,6 +2259,11 @@
   
   
     <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
