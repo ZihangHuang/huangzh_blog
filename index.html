@@ -306,6 +306,170 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zihanghuang.github.io/huangzh_blog/2019/04/26/javascript技巧2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="BoBo">
+      <meta itemprop="description" content="前端，技术，文学">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="瓦尔德的森林">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/26/javascript技巧2/" itemprop="url">
+                  javascript技巧2
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-04-26 14:35:44 / Modified: 16:12:24" itemprop="dateCreated datePublished" datetime="2019-04-26T14:35:44+08:00">2019-04-26</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>最近发现 js 真的有很多奇淫技巧。</p>
+<h3 id="给函数添加属性"><a href="#给函数添加属性" class="headerlink" title="给函数添加属性"></a>给函数添加属性</h3><p>因为 js 一切皆对象，函数其实也是对象，是 Function 的实例。所以也可以给对象给它添加属性。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">people</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">people.age = <span class="number">30</span>;</span><br><span class="line">people.say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"say"</span>);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(people.age); <span class="comment">//30</span></span><br><span class="line">people.say(); <span class="comment">//say</span></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/04/26/javascript技巧2/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zihanghuang.github.io/huangzh_blog/2019/04/04/Typescript笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -352,12 +516,24 @@
                 
               
 
-              <time title="Created: 2019-04-04 10:26:52 / Modified: 12:12:29" itemprop="dateCreated datePublished" datetime="2019-04-04T10:26:52+08:00">2019-04-04</time>
+              <time title="Created: 2019-04-04 10:26:52" itemprop="dateCreated datePublished" datetime="2019-04-04T10:26:52+08:00">2019-04-04</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-04-26 14:51:16" itemprop="dateModified" datetime="2019-04-26T14:51:16+08:00">2019-04-26</time>
               
             
           </span>
@@ -706,7 +882,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-04-03 18:24:47" itemprop="dateModified" datetime="2019-04-03T18:24:47+08:00">2019-04-03</time>
+                <time title="Modified: 2019-04-10 14:46:52" itemprop="dateModified" datetime="2019-04-10T14:46:52+08:00">2019-04-10</time>
               
             
           </span>
@@ -758,7 +934,7 @@
 
       
         
-          <p>&emsp;&emsp;最近用vue做了几个很小的活动页。越来越喜欢这个框架，实在很贴心，文档写得非常好，生态环境现状也很不错了。<br>&emsp;&emsp;我一向是不喜欢写分号的，但大部分代码都是带分号的，从网上抄一段下来，得自己一行一行把分号去掉，不然看着不太舒服。了解到有eslint + prettier这套代码规范 + 格式化代码的插件后，我马上配置使用上了。看着一行一行整整齐齐的代码，那个酸爽啊！从此妈妈再也不用担心代码写的乱七八糟了。当然，它们的作用还不止这些。<br>&emsp;&emsp;配置也不麻烦，我搭配的编辑器是vs code，也是一大神器。下面记录下配置详情。<br>
+          <p>&emsp;&emsp;最近用vue做了几个很小的活动页。越来越觉得不错，文档写得非常好，生态环境现状也很不错了。<br>&emsp;&emsp;对于团队间的代码规范，vue也有一个插件vuter，配合eslint、prettier，从此妈妈再也不用担心代码写的乱七八糟了。<br>&emsp;&emsp;配置也不麻烦，我搭配的编辑器是vs code，也是一大神器。下面记录下配置详情。<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/12/15/vue项目代码规范和格式化神器/#more" rel="contents">
@@ -1835,181 +2011,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zihanghuang.github.io/huangzh_blog/2018/05/26/防抖和节流/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="BoBo">
-      <meta itemprop="description" content="前端，技术，文学">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="瓦尔德的森林">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/26/防抖和节流/" itemprop="url">
-                  防抖和节流
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-05-26 23:09:05" itemprop="dateCreated datePublished" datetime="2018-05-26T23:09:05+08:00">2018-05-26</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-04-03 18:25:30" itemprop="dateModified" datetime="2019-04-03T18:25:30+08:00">2019-04-03</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>整理了一下防抖和节流</p>
-<h3 id="防抖"><a href="#防抖" class="headerlink" title="防抖"></a>防抖</h3><p>很多时候，多次触发事件后，事件处理函数只执行一次，并且是在触发操作结束时执行，我们在监听滚动条位置，控制是否显示返回顶部按钮时，就可以将防抖函数应用其中。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/26/防抖和节流/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2057,7 +2058,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>

@@ -114,25 +114,25 @@
 
 
 
-  <meta name="description" content="学习js的过程中，this的指向是绕不过去的坎，因为有时候会让人感到有点乱，比如说： 123456789101112131415161718var name = 1;var people = &amp;#123;	name: 2,	getName: function()&amp;#123;		return this.name;	&amp;#125;,	son: &amp;#123;		name: 3,		getName: fun">
+  <meta name="description" content="最近发现 js 真的有很多奇淫技巧。 给函数添加属性因为 js 一切皆对象，函数其实也是对象，是 Function 的实例。所以也可以给对象给它添加属性。 1234567function people() &amp;#123;&amp;#125;people.age = 30;people.say = function() &amp;#123;  console.log(&quot;say&quot;);&amp;#125;;console.log">
 <meta name="keywords" content="前端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="this指向">
-<meta property="og:url" content="https://zihanghuang.github.io/huangzh_blog/2018/06/20/this指向/index.html">
+<meta property="og:title" content="javascript技巧2">
+<meta property="og:url" content="https://zihanghuang.github.io/huangzh_blog/2019/04/26/javascript技巧2/index.html">
 <meta property="og:site_name" content="瓦尔德的森林">
-<meta property="og:description" content="学习js的过程中，this的指向是绕不过去的坎，因为有时候会让人感到有点乱，比如说： 123456789101112131415161718var name = 1;var people = &amp;#123;	name: 2,	getName: function()&amp;#123;		return this.name;	&amp;#125;,	son: &amp;#123;		name: 3,		getName: fun">
+<meta property="og:description" content="最近发现 js 真的有很多奇淫技巧。 给函数添加属性因为 js 一切皆对象，函数其实也是对象，是 Function 的实例。所以也可以给对象给它添加属性。 1234567function people() &amp;#123;&amp;#125;people.age = 30;people.say = function() &amp;#123;  console.log(&quot;say&quot;);&amp;#125;;console.log">
 <meta property="og:locale" content="chinese">
-<meta property="og:updated_time" content="2019-04-03T10:24:19.000Z">
+<meta property="og:updated_time" content="2019-04-26T08:12:24.654Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="this指向">
-<meta name="twitter:description" content="学习js的过程中，this的指向是绕不过去的坎，因为有时候会让人感到有点乱，比如说： 123456789101112131415161718var name = 1;var people = &amp;#123;	name: 2,	getName: function()&amp;#123;		return this.name;	&amp;#125;,	son: &amp;#123;		name: 3,		getName: fun">
+<meta name="twitter:title" content="javascript技巧2">
+<meta name="twitter:description" content="最近发现 js 真的有很多奇淫技巧。 给函数添加属性因为 js 一切皆对象，函数其实也是对象，是 Function 的实例。所以也可以给对象给它添加属性。 1234567function people() &amp;#123;&amp;#125;people.age = 30;people.say = function() &amp;#123;  console.log(&quot;say&quot;);&amp;#125;;console.log">
 
 
 
 
 
 
-  <link rel="canonical" href="https://zihanghuang.github.io/huangzh_blog/2018/06/20/this指向/"/>
+  <link rel="canonical" href="https://zihanghuang.github.io/huangzh_blog/2019/04/26/javascript技巧2/"/>
 
 
 
@@ -142,7 +142,7 @@
   };
 </script>
 
-  <title>this指向 | 瓦尔德的森林</title>
+  <title>javascript技巧2 | 瓦尔德的森林</title>
   
 
 
@@ -307,7 +307,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zihanghuang.github.io/huangzh_blog/2018/06/20/this指向/">
+    <link itemprop="mainEntityOfPage" href="https://zihanghuang.github.io/huangzh_blog/2019/04/26/javascript技巧2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="BoBo">
@@ -324,7 +324,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">this指向
+          <h1 class="post-title" itemprop="name headline">javascript技巧2
               
             
           </h1>
@@ -349,24 +349,12 @@
                 
               
 
-              <time title="Created: 2018-06-20 18:15:50" itemprop="dateCreated datePublished" datetime="2018-06-20T18:15:50+08:00">2018-06-20</time>
+              <time title="Created: 2019-04-26 14:35:44 / Modified: 16:12:24" itemprop="dateCreated datePublished" datetime="2019-04-26T14:35:44+08:00">2019-04-26</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-04-03 18:24:19" itemprop="dateModified" datetime="2019-04-03T18:24:19+08:00">2019-04-03</time>
               
             
           </span>
@@ -417,17 +405,23 @@
       
 
       
-        <p>学习js的过程中，this的指向是绕不过去的坎，因为有时候会让人感到有点乱，比如说：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var name = 1;</span><br><span class="line">var people = &#123;</span><br><span class="line">	name: 2,</span><br><span class="line">	getName: function()&#123;</span><br><span class="line">		return this.name;</span><br><span class="line">	&#125;,</span><br><span class="line">	son: &#123;</span><br><span class="line">		name: 3,</span><br><span class="line">		getName: function()&#123;</span><br><span class="line">			console.log(this);</span><br><span class="line">			return this.name</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">var a = people.getName;</span><br><span class="line">var b = people.son;</span><br><span class="line">console.log(a())</span><br><span class="line">console.log(people.getName());</span><br></pre></td></tr></table></figure>
+        <p>最近发现 js 真的有很多奇淫技巧。</p>
+<h3 id="给函数添加属性"><a href="#给函数添加属性" class="headerlink" title="给函数添加属性"></a>给函数添加属性</h3><p>因为 js 一切皆对象，函数其实也是对象，是 Function 的实例。所以也可以给对象给它添加属性。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">people</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">people.age = <span class="number">30</span>;</span><br><span class="line">people.say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"say"</span>);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(people.age); <span class="comment">//30</span></span><br><span class="line">people.say(); <span class="comment">//say</span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<p>会输出什么呢？</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
-<p>因为a的this为window，所以为window.name，而b的this是people。</p>
-<p>继续看</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(b.getName()); <span class="comment">// 3      // b的this为son，son.name = 3</span></span><br><span class="line"><span class="built_in">console</span>.log(people.son.getName()); <span class="comment">// 3   //getName为son的直接调用，所以也为son.name</span></span><br></pre></td></tr></table></figure>
-<p>在实例化构造函数时，如果返回值是一个对象，那么this指向的就是那个返回的对象，如果返回值不是一个对象那么this还是指向函数的实例，例子如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">GetName</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line">    <span class="keyword">this</span>.name = <span class="number">1</span>;  </span><br><span class="line">    <span class="keyword">return</span> &#123;&#125;; <span class="comment">// 返回对象</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> getName;  </span><br><span class="line"><span class="built_in">console</span>.log(a.name); <span class="comment">//undefined</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">GetName</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line">    <span class="keyword">this</span>.name = <span class="number">1</span>;  </span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span>; <span class="comment">// 返回非对象</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> d = <span class="keyword">new</span> getName;  </span><br><span class="line"><span class="built_in">console</span>.log(d.name); <span class="comment">//1</span></span><br></pre></td></tr></table></figure>
-<p>回调函数也会导致this丢失：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.name = <span class="string">'window jack'</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    name: <span class="string">'obj jack'</span>,</span><br><span class="line">    show: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">obj.show() <span class="comment">//obj jack</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params">fn</span>)</span>&#123;</span><br><span class="line">    fn()</span><br><span class="line">&#125;</span><br><span class="line">fun(obj.show) <span class="comment">//window jack</span></span><br></pre></td></tr></table></figure></p>
+<p>每个函数其实还有几个自带的属性：<br>name: 函数名称<br>length: 函数参数个数<br>prototype: 函数原型<br>利用这个特性，可以写出一些不太常见的代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">man</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    man.say();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">Object</span>.setPrototypeOf(man, proto); <span class="comment">//设置man的原型</span></span><br><span class="line">  <span class="keyword">return</span> man;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">proto</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">proto.say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"say"</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">proto.eat = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"eat"</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> chinese = <span class="keyword">new</span> Person();</span><br><span class="line">chinese(); <span class="comment">//say</span></span><br><span class="line">chinese.eat(); <span class="comment">//eat</span></span><br></pre></td></tr></table></figure>
+<p>构造函数一般都返回自身实例，但这里 Person 构造函数返回一个函数 man，此函数 man 设置了 proto 为原型，所以 man 可以调用 proto 的方法，因为函数也是对象的一种，所以实例化后的 chinese 既可以作为函数执行，也可以调用自己或原型链的方法。</p>
+<h3 id="把对象转化为函数"><a href="#把对象转化为函数" class="headerlink" title="把对象转化为函数"></a>把对象转化为函数</h3><p>有这么一个对象：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> app = &#123;&#125;;</span><br><span class="line">app.nickname = <span class="string">"jack"</span>;</span><br><span class="line"><span class="comment">//app.name = 'jack'</span></span><br><span class="line">app.handle = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"hello "</span> + <span class="keyword">this</span>.nickname);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>假设要把这个对象传给一个函数，这个函数只能接受一个函数作为对象：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">create</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> fn !== <span class="string">"function"</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="built_in">TypeError</span>(<span class="string">"expected fn is a funtion"</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"create a app!"</span>);</span><br><span class="line">  fn();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个时候可以把 app 改造成一个函数：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> application = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  application.handle();</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">Object</span>.assign(application, app);</span><br></pre></td></tr></table></figure>
+<p>这样就可以传入 create 函数了：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">create(application);</span><br><span class="line"><span class="comment">//create a app!</span></span><br><span class="line"><span class="comment">//hello jack</span></span><br></pre></td></tr></table></figure>
+<p>注意，当前面的 app 设置了名为 name 的属性时会报错：”Cannot assign to read only property ‘name’ of function”。</p>
+<p>这些提取于 express 源码。</p>
 
       
     </div>
@@ -461,8 +455,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/13/node-redis/" rel="next" title="node_redis的一个例子">
-                <i class="fa fa-chevron-left"></i> node_redis的一个例子
+              <a href="/2019/04/04/Typescript笔记/" rel="next" title="Typescript笔记">
+                <i class="fa fa-chevron-left"></i> Typescript笔记
               </a>
             
           </div>
@@ -470,10 +464,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/30/javascript技巧/" rel="prev" title="函数绑定和函数柯里化">
-                函数绑定和函数柯里化 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -527,8 +517,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -632,6 +631,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#给函数添加属性"><span class="nav-number">1.</span> <span class="nav-text">给函数添加属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#把对象转化为函数"><span class="nav-number">2.</span> <span class="nav-text">把对象转化为函数</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
