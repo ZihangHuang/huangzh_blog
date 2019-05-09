@@ -114,18 +114,18 @@
 
 
 
-  <meta name="description" content="拷贝有两种：浅拷贝和深拷贝。 记录js两种拷贝的简单方法。">
+  <meta name="description" content="拷贝有两种：浅拷贝和深拷贝。 记录 js 两种拷贝的简单方法。">
 <meta name="keywords" content="前端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="拷贝">
 <meta property="og:url" content="https://zihanghuang.github.io/huangzh_blog/2018/06/11/拷贝/index.html">
 <meta property="og:site_name" content="瓦尔德的森林">
-<meta property="og:description" content="拷贝有两种：浅拷贝和深拷贝。 记录js两种拷贝的简单方法。">
+<meta property="og:description" content="拷贝有两种：浅拷贝和深拷贝。 记录 js 两种拷贝的简单方法。">
 <meta property="og:locale" content="chinese">
-<meta property="og:updated_time" content="2019-04-03T10:25:24.000Z">
+<meta property="og:updated_time" content="2019-05-08T10:34:54.606Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="拷贝">
-<meta name="twitter:description" content="拷贝有两种：浅拷贝和深拷贝。 记录js两种拷贝的简单方法。">
+<meta name="twitter:description" content="拷贝有两种：浅拷贝和深拷贝。 记录 js 两种拷贝的简单方法。">
 
 
 
@@ -366,7 +366,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-04-03 18:25:24" itemprop="dateModified" datetime="2019-04-03T18:25:24+08:00">2019-04-03</time>
+                <time title="Modified: 2019-05-08 18:34:54" itemprop="dateModified" datetime="2019-05-08T18:34:54+08:00">2019-05-08</time>
               
             
           </span>
@@ -418,7 +418,7 @@
 
       
         <p>拷贝有两种：浅拷贝和深拷贝。</p>
-<p>记录js两种拷贝的简单方法。</p>
+<p>记录 js 两种拷贝的简单方法。</p>
 <a id="more"></a>
 <h3 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj1 = &#123; <span class="attr">a</span>: <span class="number">0</span> , <span class="attr">b</span>: &#123; <span class="attr">c</span>: <span class="number">0</span>&#125;&#125;;</span><br><span class="line"><span class="keyword">let</span> obj2 = <span class="built_in">Object</span>.assign(&#123;&#125;, obj1);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(obj2)); <span class="comment">// &#123; a: 0, b: &#123; c: 0&#125;&#125;</span></span><br><span class="line"></span><br><span class="line">obj1.a = <span class="number">1</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(obj1)); <span class="comment">// &#123; a: 1, b: &#123; c: 0&#125;&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(obj2)); <span class="comment">// &#123; a: 0, b: &#123; c: 0&#125;&#125;</span></span><br><span class="line"></span><br><span class="line">obj2.a = <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(obj1)); <span class="comment">// &#123; a: 1, b: &#123; c: 0&#125;&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(obj2)); <span class="comment">// &#123; a: 2, b: &#123; c: 0&#125;&#125;</span></span><br><span class="line"></span><br><span class="line">obj2.b.c = <span class="number">3</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(obj1)); <span class="comment">// &#123; a: 1, b: &#123; c: 3&#125;&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(obj2)); <span class="comment">// &#123; a: 2, b: &#123; c: 3&#125;&#125;</span></span><br></pre></td></tr></table></figure>
 <h3 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">obj1 = &#123; <span class="attr">a</span>: <span class="number">0</span> , <span class="attr">b</span>: &#123; <span class="attr">c</span>: <span class="number">0</span>&#125;&#125;;</span><br><span class="line"><span class="keyword">let</span> obj3 = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(obj1));</span><br><span class="line">obj1.a = <span class="number">4</span>;</span><br><span class="line">obj1.b.c = <span class="number">4</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(obj3)); <span class="comment">// &#123; a: 0, b: &#123; c: 0&#125;&#125;</span></span><br></pre></td></tr></table></figure>
