@@ -545,7 +545,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-05-15 17:58:05" itemprop="dateModified" datetime="2019-05-15T17:58:05+08:00">2019-05-15</time>
+                <time title="Modified: 2019-05-20 16:46:16" itemprop="dateModified" datetime="2019-05-20T16:46:16+08:00">2019-05-20</time>
               
             
           </span>
@@ -723,7 +723,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-05-08 18:34:59" itemprop="dateModified" datetime="2019-05-08T18:34:59+08:00">2019-05-08</time>
+                <time title="Modified: 2019-05-21 13:57:23" itemprop="dateModified" datetime="2019-05-21T13:57:23+08:00">2019-05-21</time>
               
             
           </span>
@@ -898,7 +898,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-05-08 18:35:28" itemprop="dateModified" datetime="2019-05-08T18:35:28+08:00">2019-05-08</time>
+                <time title="Modified: 2019-05-17 14:28:34" itemprop="dateModified" datetime="2019-05-17T14:28:34+08:00">2019-05-17</time>
               
             
           </span>
@@ -1243,7 +1243,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-05-08 18:34:51" itemprop="dateModified" datetime="2019-05-08T18:34:51+08:00">2019-05-08</time>
+                <time title="Modified: 2019-05-17 14:26:06" itemprop="dateModified" datetime="2019-05-17T14:26:06+08:00">2019-05-17</time>
               
             
           </span>
@@ -1418,7 +1418,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-05-08 18:34:45" itemprop="dateModified" datetime="2019-05-08T18:34:45+08:00">2019-05-08</time>
+                <time title="Modified: 2019-05-17 14:25:29" itemprop="dateModified" datetime="2019-05-17T14:25:29+08:00">2019-05-17</time>
               
             
           </span>
@@ -1593,7 +1593,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-05-08 18:35:16" itemprop="dateModified" datetime="2019-05-08T18:35:16+08:00">2019-05-08</time>
+                <time title="Modified: 2019-05-17 14:24:26" itemprop="dateModified" datetime="2019-05-17T14:24:26+08:00">2019-05-17</time>
               
             
           </span>
@@ -1646,7 +1646,7 @@
       
         
           <p>学习 js 的过程中，this 的指向是绕不过去的坎，因为有时候会让人感到有点乱，比如说：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var name = 1;</span><br><span class="line">var people = &#123;</span><br><span class="line">  name: 2,</span><br><span class="line">  getName: function()&#123;</span><br><span class="line">    return this.name;</span><br><span class="line">  &#125;,</span><br><span class="line">  son: &#123;</span><br><span class="line">    name: 3,</span><br><span class="line">    getName: function()&#123;</span><br><span class="line">      console.log(this);</span><br><span class="line">      return this.name</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">var a = people.getName;</span><br><span class="line">var b = people.son;</span><br><span class="line">console.log(a())</span><br><span class="line">console.log(people.getName());</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> people = &#123;</span><br><span class="line">  name: <span class="number">2</span>,</span><br><span class="line">  getName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">  &#125;,</span><br><span class="line">  son: &#123;</span><br><span class="line">    name: <span class="number">3</span>,</span><br><span class="line">    getName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.name</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> a = people.getName;</span><br><span class="line"><span class="keyword">var</span> b = people.son;</span><br><span class="line"><span class="built_in">console</span>.log(a())</span><br><span class="line"><span class="built_in">console</span>.log(people.getName());</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/06/20/this指向/#more" rel="contents">
@@ -1768,7 +1768,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-05-08 18:35:13" itemprop="dateModified" datetime="2019-05-08T18:35:13+08:00">2019-05-08</time>
+                <time title="Modified: 2019-05-17 15:34:34" itemprop="dateModified" datetime="2019-05-17T15:34:34+08:00">2019-05-17</time>
               
             
           </span>
@@ -1942,7 +1942,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-05-08 18:34:54" itemprop="dateModified" datetime="2019-05-08T18:34:54+08:00">2019-05-08</time>
+                <time title="Modified: 2019-05-17 14:26:27" itemprop="dateModified" datetime="2019-05-17T14:26:27+08:00">2019-05-17</time>
               
             
           </span>
