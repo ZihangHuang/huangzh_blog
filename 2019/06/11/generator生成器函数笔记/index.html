@@ -114,25 +114,25 @@
 
 
 
-  <meta name="description" content="整理了一下 git 的常用命令 查看远程仓库1git remote -v 添加远程仓库1git remote add origin ... 提交12git pull origin master --allow-unrelated-histories(让本地仓库和远程仓库链接上，并拉取远程仓库)git push origin master">
-<meta name="keywords" content="git">
+  <meta name="description" content="yield* 表达式">
+<meta name="keywords" content="前端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git常用命令">
-<meta property="og:url" content="https://zihanghuang.github.io/huangzh_blog/2018/05/21/git常用命令/index.html">
+<meta property="og:title" content="generator生成器函数笔记">
+<meta property="og:url" content="https://zihanghuang.github.io/huangzh_blog/2019/06/11/generator生成器函数笔记/index.html">
 <meta property="og:site_name" content="瓦尔德的森林">
-<meta property="og:description" content="整理了一下 git 的常用命令 查看远程仓库1git remote -v 添加远程仓库1git remote add origin ... 提交12git pull origin master --allow-unrelated-histories(让本地仓库和远程仓库链接上，并拉取远程仓库)git push origin master">
+<meta property="og:description" content="yield* 表达式">
 <meta property="og:locale" content="chinese">
-<meta property="og:updated_time" content="2019-05-20T08:45:10.478Z">
+<meta property="og:updated_time" content="2019-06-11T03:51:21.721Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git常用命令">
-<meta name="twitter:description" content="整理了一下 git 的常用命令 查看远程仓库1git remote -v 添加远程仓库1git remote add origin ... 提交12git pull origin master --allow-unrelated-histories(让本地仓库和远程仓库链接上，并拉取远程仓库)git push origin master">
+<meta name="twitter:title" content="generator生成器函数笔记">
+<meta name="twitter:description" content="yield* 表达式">
 
 
 
 
 
 
-  <link rel="canonical" href="https://zihanghuang.github.io/huangzh_blog/2018/05/21/git常用命令/"/>
+  <link rel="canonical" href="https://zihanghuang.github.io/huangzh_blog/2019/06/11/generator生成器函数笔记/"/>
 
 
 
@@ -142,7 +142,7 @@
   };
 </script>
 
-  <title>git常用命令 | 瓦尔德的森林</title>
+  <title>generator生成器函数笔记 | 瓦尔德的森林</title>
   
 
 
@@ -307,7 +307,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zihanghuang.github.io/huangzh_blog/2018/05/21/git常用命令/">
+    <link itemprop="mainEntityOfPage" href="https://zihanghuang.github.io/huangzh_blog/2019/06/11/generator生成器函数笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="BoBo">
@@ -324,7 +324,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">git常用命令
+          <h1 class="post-title" itemprop="name headline">generator生成器函数笔记
               
             
           </h1>
@@ -349,24 +349,12 @@
                 
               
 
-              <time title="Created: 2018-05-21 22:39:17" itemprop="dateCreated datePublished" datetime="2018-05-21T22:39:17+08:00">2018-05-21</time>
+              <time title="Created: 2019-06-11 11:37:19 / Modified: 11:51:21" itemprop="dateCreated datePublished" datetime="2019-06-11T11:37:19+08:00">2019-06-11</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-05-20 16:45:10" itemprop="dateModified" datetime="2019-05-20T16:45:10+08:00">2019-05-20</time>
               
             
           </span>
@@ -417,25 +405,10 @@
       
 
       
-        <p>整理了一下 git 的常用命令</p>
-<h3 id="查看远程仓库"><a href="#查看远程仓库" class="headerlink" title="查看远程仓库"></a>查看远程仓库</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
-<h3 id="添加远程仓库"><a href="#添加远程仓库" class="headerlink" title="添加远程仓库"></a>添加远程仓库</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin ...</span><br></pre></td></tr></table></figure>
-<h3 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master --allow-unrelated-histories(让本地仓库和远程仓库链接上，并拉取远程仓库)</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h3 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD^    //回退到上版本</span><br><span class="line">git reset --hard HEAD^^    //回退到上上版本</span><br><span class="line">git log   //查看提交日记</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>用<code>git reset --hard HEAD^</code> 回退到某一个以前版本后，再 git log 已经看不到新的版本。如果想撤销回退，就必须找到 append GPL 的 commit id。<br>当你命令行界面还没关闭时，你可以往上看那个新版本的 commit id，然后再<code>git reset --hard 版本号</code>。<br>如果已经关了界面，Git 提供了一个命令<code>git reflog</code>用来记录你的每一次命令，你可以找到那个新版本的 commit id。</p>
-</blockquote>
-<h3 id="撤销命令"><a href="#撤销命令" class="headerlink" title="撤销命令"></a>撤销命令</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -- readme.txt</span><br></pre></td></tr></table></figure>
-<p>把 readme.txt 文件在工作区的修改全部撤销，这里有两种情况：<br>一种是 readme.txt 自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；<br>一种是 readme.txt 已经 add 到暂存区后，又作了修改，要先<code>git reset HEAD readmd.txt</code>，回到 add 前，然后再<code>git checkout -- readme.txt</code>，撤销修改就回到添加到暂存区后的状态。<br>(注意加双<code>--</code> ，不然变成切换分支了)</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout . 撤销全部文件修改</span><br></pre></td></tr></table></figure>
-<h3 id="创建并切换到新分支"><a href="#创建并切换到新分支" class="headerlink" title="创建并切换到新分支"></a>创建并切换到新分支</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b haha 创建新分支haha</span><br></pre></td></tr></table></figure>
-<h3 id="合并分支，删掉分支"><a href="#合并分支，删掉分支" class="headerlink" title="合并分支，删掉分支"></a>合并分支，删掉分支</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git checkout master //切换到主分支</span><br><span class="line"></span><br><span class="line">git merge dev // 合并</span><br><span class="line"></span><br><span class="line">git branch -d dev //删除dev分支</span><br><span class="line"></span><br><span class="line">git push origin -d dev // 删除远程分支</span><br></pre></td></tr></table></figure>
-<h3 id="查看修改内容"><a href="#查看修改内容" class="headerlink" title="查看修改内容"></a>查看修改内容</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git diff 查看当前没有add的内容的修改</span><br><span class="line">git diff --cached  查看已经add但是没有commit的内容修改</span><br></pre></td></tr></table></figure>
-<!-- 如果post_asset_folder为false，图片统一放在source/images文件夹，用![](/images/image.jpg)引用
-如果post_asset_folder为true，图片放在跟文章对应的同名文件夹的assets文件夹即可，引用语法如下,但每次新建文章都会创建对应的同名文件夹.
- –&gt;
--->
+        <h4 id="yield-表达式"><a href="#yield-表达式" class="headerlink" title="yield* 表达式"></a><code>yield*</code> 表达式</h4><a id="more"></a>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">yield</span> <span class="string">"a"</span>;</span><br><span class="line">  <span class="keyword">yield</span> <span class="string">"b"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">yield</span> <span class="string">"x"</span>;</span><br><span class="line">  <span class="keyword">yield</span>* foo();</span><br><span class="line">  <span class="keyword">yield</span> <span class="string">"y"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">yield</span> <span class="string">"x"</span>;</span><br><span class="line">  <span class="keyword">yield</span> <span class="string">"a"</span>;</span><br><span class="line">  <span class="keyword">yield</span> <span class="string">"b"</span>;</span><br><span class="line">  <span class="keyword">yield</span> <span class="string">"y"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">yield</span> <span class="string">"x"</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> v <span class="keyword">of</span> foo()) &#123;</span><br><span class="line">    <span class="keyword">yield</span> v;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">yield</span> <span class="string">"y"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> v <span class="keyword">of</span> bar()) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(v);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// "x"</span></span><br><span class="line"><span class="comment">// "a"</span></span><br><span class="line"><span class="comment">// "b"</span></span><br><span class="line"><span class="comment">// "y"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> delegatedIterator = (<span class="function"><span class="keyword">function</span>* (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">yield</span> <span class="string">'Hello!'</span>;</span><br><span class="line">  <span class="keyword">yield</span> <span class="string">'Bye!'</span>;</span><br><span class="line">&#125;());</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> delegatingIterator = (<span class="function"><span class="keyword">function</span>* (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">yield</span> <span class="string">'Greetings!'</span>;</span><br><span class="line">  <span class="keyword">yield</span>* delegatedIterator;</span><br><span class="line">  <span class="keyword">yield</span> <span class="string">'Ok, bye.'</span>;</span><br><span class="line">&#125;());</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> value <span class="keyword">of</span> delegatingIterator) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(value);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// "Greetings!</span></span><br><span class="line"><span class="comment">// "Hello!"</span></span><br><span class="line"><span class="comment">// "Bye!"</span></span><br><span class="line"><span class="comment">// "Ok, bye."</span></span><br></pre></td></tr></table></figure>
+<p>参考：<a href="http://es6.ruanyifeng.com/#docs/generator" target="_blank" rel="noopener">阮一峰 ECMAScript 6 入门</a></p>
+
       
     </div>
 
@@ -455,7 +428,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/git/" rel="tag"># git</a>
+            <a href="/tags/前端/" rel="tag"># 前端</a>
           
         </div>
       
@@ -468,15 +441,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/04/26/javascript技巧1/" rel="next" title="javascript技巧1">
+                <i class="fa fa-chevron-left"></i> javascript技巧1
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/26/防抖和节流/" rel="prev" title="防抖和节流">
-                防抖和节流 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -654,7 +627,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看远程仓库"><span class="nav-number">1.</span> <span class="nav-text">查看远程仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加远程仓库"><span class="nav-number">2.</span> <span class="nav-text">添加远程仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提交"><span class="nav-number">3.</span> <span class="nav-text">提交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#版本回退"><span class="nav-number">4.</span> <span class="nav-text">版本回退</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销命令"><span class="nav-number">5.</span> <span class="nav-text">撤销命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建并切换到新分支"><span class="nav-number">6.</span> <span class="nav-text">创建并切换到新分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#合并分支，删掉分支"><span class="nav-number">7.</span> <span class="nav-text">合并分支，删掉分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看修改内容"><span class="nav-number">8.</span> <span class="nav-text">查看修改内容</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#yield-表达式"><span class="nav-number">1.</span> <span class="nav-text">yield* 表达式</span></a></li></ol></div>
             
 
           </div>
