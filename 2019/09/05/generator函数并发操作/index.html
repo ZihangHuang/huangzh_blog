@@ -114,17 +114,17 @@
 
 
 
-  <meta name="description" content="generator函数把异步操作写成同步形式，下一步操作会等待上一步。那如果想并发操作，要怎么写呢？我们使用co库来执行generator函数，注意使用的版本是3.1.0，和最新的4.0版本有些不同。先创建两个异步函数，一个返回Promise，另一个是Thunk函数： 123456789101112131415var readFile1 = function(fileName) &amp;#123;">
+  <meta name="description" content="generator函数把异步操作写成同步形式，下一步操作会等待上一步。那如果想并发操作，要怎么写呢？">
 <meta property="og:type" content="article">
 <meta property="og:title" content="generator函数并发操作">
 <meta property="og:url" content="https://zihanghuang.github.io/huangzh_blog/2019/09/05/generator函数并发操作/index.html">
 <meta property="og:site_name" content="瓦尔德的森林">
-<meta property="og:description" content="generator函数把异步操作写成同步形式，下一步操作会等待上一步。那如果想并发操作，要怎么写呢？我们使用co库来执行generator函数，注意使用的版本是3.1.0，和最新的4.0版本有些不同。先创建两个异步函数，一个返回Promise，另一个是Thunk函数： 123456789101112131415var readFile1 = function(fileName) &amp;#123;">
+<meta property="og:description" content="generator函数把异步操作写成同步形式，下一步操作会等待上一步。那如果想并发操作，要怎么写呢？">
 <meta property="og:locale" content="chinese">
-<meta property="og:updated_time" content="2019-09-05T06:09:21.891Z">
+<meta property="og:updated_time" content="2019-09-05T06:12:25.024Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="generator函数并发操作">
-<meta name="twitter:description" content="generator函数把异步操作写成同步形式，下一步操作会等待上一步。那如果想并发操作，要怎么写呢？我们使用co库来执行generator函数，注意使用的版本是3.1.0，和最新的4.0版本有些不同。先创建两个异步函数，一个返回Promise，另一个是Thunk函数： 123456789101112131415var readFile1 = function(fileName) &amp;#123;">
+<meta name="twitter:description" content="generator函数把异步操作写成同步形式，下一步操作会等待上一步。那如果想并发操作，要怎么写呢？">
 
 
 
@@ -348,7 +348,7 @@
                 
               
 
-              <time title="Created: 2019-09-05 12:00:52 / Modified: 14:09:21" itemprop="dateCreated datePublished" datetime="2019-09-05T12:00:52+08:00">2019-09-05</time>
+              <time title="Created: 2019-09-05 12:00:52 / Modified: 14:12:25" itemprop="dateCreated datePublished" datetime="2019-09-05T12:00:52+08:00">2019-09-05</time>
             
 
             
@@ -386,7 +386,9 @@
       
 
       
-        <p>generator函数把异步操作写成同步形式，下一步操作会等待上一步。那如果想并发操作，要怎么写呢？<br>我们使用co库来执行generator函数，注意使用的版本是3.1.0，和最新的4.0版本有些不同。<br>先创建两个异步函数，一个返回Promise，另一个是Thunk函数：</p>
+        <p>generator函数把异步操作写成同步形式，下一步操作会等待上一步。那如果想并发操作，要怎么写呢？</p>
+<a id="more"></a>
+<p>我们使用co库来执行generator函数，注意使用的版本是3.1.0，和最新的4.0版本有些不同。<br>先创建两个异步函数，一个返回Promise，另一个是Thunk函数：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> readFile1 = <span class="function"><span class="keyword">function</span>(<span class="params">fileName</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">            resolve(fileName)</span><br><span class="line">        &#125;, <span class="number">1000</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> readFile2 = <span class="function"><span class="keyword">function</span>(<span class="params">fileName</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">cb</span>) </span>&#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">            cb(<span class="literal">null</span>, fileName)</span><br><span class="line">        &#125;, <span class="number">1000</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>执行一下，我们先试试readFile1，即Promise：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> co = <span class="built_in">require</span>(<span class="string">"co"</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">run</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> co(<span class="function"><span class="keyword">function</span>*(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.time(<span class="string">'time'</span>)</span><br><span class="line">            <span class="comment">//并发的重点是这里</span></span><br><span class="line">            <span class="keyword">let</span> a =  readFile1(<span class="string">"./a.txt"</span>)</span><br><span class="line">            <span class="keyword">let</span> b = readFile1(<span class="string">"./b.txt"</span>)</span><br><span class="line">            <span class="keyword">let</span> info = &#123;</span><br><span class="line">                a: <span class="keyword">yield</span> a,</span><br><span class="line">                b: <span class="keyword">yield</span> b</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">console</span>.timeEnd(<span class="string">'time'</span>)</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'res:'</span>, info);</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">            <span class="built_in">console</span>.error(<span class="string">"happen error!"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"done"</span>;</span><br><span class="line">    &#125;)();</span><br><span class="line">&#125;</span><br><span class="line">run()</span><br></pre></td></tr></table></figure>
