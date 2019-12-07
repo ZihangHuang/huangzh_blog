@@ -114,25 +114,25 @@
 
 
 
-  <meta name="description" content="整理了一下防抖和节流 防抖很多时候，多次触发事件后，事件处理函数只执行一次，并且是在触发操作结束时执行，我们在监听滚动条位置，控制是否显示返回顶部按钮时，就可以将防抖函数应用其中。">
+  <meta name="description" content="react-router4的history模式写法:">
 <meta name="keywords" content="前端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="防抖和节流">
-<meta property="og:url" content="https://zihanghuang.github.io/huangzh_blog/2018/05/26/防抖和节流/index.html">
+<meta property="og:title" content="react-router4 history模式">
+<meta property="og:url" content="https://zihanghuang.github.io/huangzh_blog/2019/12/07/react-router4-history模式/index.html">
 <meta property="og:site_name" content="瓦尔德的森林">
-<meta property="og:description" content="整理了一下防抖和节流 防抖很多时候，多次触发事件后，事件处理函数只执行一次，并且是在触发操作结束时执行，我们在监听滚动条位置，控制是否显示返回顶部按钮时，就可以将防抖函数应用其中。">
+<meta property="og:description" content="react-router4的history模式写法:">
 <meta property="og:locale" content="chinese">
-<meta property="og:updated_time" content="2019-05-17T06:24:56.628Z">
+<meta property="og:updated_time" content="2019-12-07T10:15:05.228Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="防抖和节流">
-<meta name="twitter:description" content="整理了一下防抖和节流 防抖很多时候，多次触发事件后，事件处理函数只执行一次，并且是在触发操作结束时执行，我们在监听滚动条位置，控制是否显示返回顶部按钮时，就可以将防抖函数应用其中。">
+<meta name="twitter:title" content="react-router4 history模式">
+<meta name="twitter:description" content="react-router4的history模式写法:">
 
 
 
 
 
 
-  <link rel="canonical" href="https://zihanghuang.github.io/huangzh_blog/2018/05/26/防抖和节流/"/>
+  <link rel="canonical" href="https://zihanghuang.github.io/huangzh_blog/2019/12/07/react-router4-history模式/"/>
 
 
 
@@ -142,7 +142,7 @@
   };
 </script>
 
-  <title>防抖和节流 | 瓦尔德的森林</title>
+  <title>react-router4 history模式 | 瓦尔德的森林</title>
   
 
 
@@ -307,7 +307,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zihanghuang.github.io/huangzh_blog/2018/05/26/防抖和节流/">
+    <link itemprop="mainEntityOfPage" href="https://zihanghuang.github.io/huangzh_blog/2019/12/07/react-router4-history模式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="BoBo">
@@ -324,7 +324,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">防抖和节流
+          <h1 class="post-title" itemprop="name headline">react-router4 history模式
               
             
           </h1>
@@ -349,24 +349,12 @@
                 
               
 
-              <time title="Created: 2018-05-26 23:09:05" itemprop="dateCreated datePublished" datetime="2018-05-26T23:09:05+08:00">2018-05-26</time>
+              <time title="Created: 2019-12-07 17:23:39 / Modified: 18:15:05" itemprop="dateCreated datePublished" datetime="2019-12-07T17:23:39+08:00">2019-12-07</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-05-17 14:24:56" itemprop="dateModified" datetime="2019-05-17T14:24:56+08:00">2019-05-17</time>
               
             
           </span>
@@ -417,12 +405,24 @@
       
 
       
-        <p>整理了一下防抖和节流</p>
-<h3 id="防抖"><a href="#防抖" class="headerlink" title="防抖"></a>防抖</h3><p>很多时候，多次触发事件后，事件处理函数只执行一次，并且是在触发操作结束时执行，我们在监听滚动条位置，控制是否显示返回顶部按钮时，就可以将防抖函数应用其中。</p>
+        <p>react-router4的history模式写法:</p>
 <a id="more"></a>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义一个操作函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">todo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'date:'</span> + <span class="keyword">new</span> <span class="built_in">Date</span>())</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fangdou</span>(<span class="params">callback, time</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> timer</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        clearTimeout(timer);</span><br><span class="line">        timer = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            callback()</span><br><span class="line">        &#125;, time)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'scroll'</span>, fangdou(todo,<span class="number">50</span>))</span><br></pre></td></tr></table></figure>
-<h3 id="节流"><a href="#节流" class="headerlink" title="节流"></a>节流</h3><p>借助 flag 标志和 setTimeout 实现在一定时间内，只执行一次方法，只有上一次函数执行后，过了规定的时间间隔，才能进行下一次的函数调用。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">jieliu</span>(<span class="params">callback,time</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> flag = <span class="literal">true</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!flag)&#123;</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        &#125;</span><br><span class="line">        flag = <span class="literal">false</span></span><br><span class="line">        setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            callback()</span><br><span class="line">            flag = <span class="literal">true</span></span><br><span class="line">        &#125;, time)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'scroll'</span>, jieliu(todo,<span class="number">2000</span>)) <span class="comment">//两秒执行一次</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; BrowserRouter <span class="keyword">as</span> Router, Route, Switch &#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//......省略，然后在根组件这样写：</span></span><br><span class="line">&lt;Router&gt;</span><br><span class="line">    &lt;Switch&gt;</span><br><span class="line">      &lt;Route path=<span class="string">"/"</span> exact component=&#123;Home&#125; /&gt;</span><br><span class="line">      &lt;Route path=<span class="string">"/user"</span> exact component=&#123;User&#125; /&gt;</span><br><span class="line">      &lt;Route path=<span class="string">""</span> component=&#123;() =&gt; <span class="string">'404'</span>&#125; /&gt;</span><br><span class="line">    &lt;<span class="regexp">/Switch&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>Router&gt;</span><br></pre></td></tr></table></figure>
+<p>如果某个子组件不是<code>&lt;Route /&gt;</code>的子组件，但仍想使用像<code>this.props.history.push()</code>这样的功能，可以导入<code>withRouter</code>,用它包裹你的组件<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; withRouter &#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyChild</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &lt;div&gt;我是一个没有感情的组件&lt;/div&gt;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> withRouter(MyChild)</span><br></pre></td></tr></table></figure></p>
+<p>注意，如果你像在组件外的代码比如在store里进行一些跳转等，如果你使用hash模式，这样可以生效：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createHashHistory &#125; <span class="keyword">from</span> <span class="string">'history'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> history = createHashHistory()</span><br><span class="line"></span><br><span class="line"><span class="comment">//进行跳转</span></span><br><span class="line">history.push(<span class="string">'/'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>但是在history模式里，如果你也这样写：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createBrowserHistory &#125; <span class="keyword">from</span> <span class="string">'history'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> history = createBrowserHistory()</span><br><span class="line"></span><br><span class="line"><span class="comment">//进行跳转</span></span><br><span class="line">history.push(<span class="string">'/'</span>)</span><br></pre></td></tr></table></figure>
+<p><code>history.push</code>执行后，地址栏的url会改变，但页面并不会做出改变，我猜可能是组件检测不到路由变动。</p>
+<p>这时候可以改成下面这样：<br>新建一个history.js文件：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createBrowserHistory &#125; <span class="keyword">from</span> <span class="string">'history'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> history = createBrowserHistory()</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> history</span><br></pre></td></tr></table></figure>
+<p>然后路由配置里修改如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Router, Route, Switch &#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span></span><br><span class="line"><span class="keyword">import</span> history <span class="keyword">from</span> <span class="string">'./history'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//......省略，然后在根组件这样写：</span></span><br><span class="line">&lt;Router history=&#123;history&#125;&gt;</span><br><span class="line">    &lt;Switch&gt;</span><br><span class="line">      &lt;Route path=<span class="string">"/"</span> exact component=&#123;Home&#125; /&gt;</span><br><span class="line">      &lt;Route path=<span class="string">"/user"</span> exact component=&#123;User&#125; /&gt;</span><br><span class="line">      &lt;Route path=<span class="string">""</span> component=&#123;() =&gt; <span class="string">'404'</span>&#125; /&gt;</span><br><span class="line">    &lt;<span class="regexp">/Switch&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>Router&gt;</span><br></pre></td></tr></table></figure>
+<p>虽然官网推荐使用BrowserRouter，但其实也可以像react-router3那样导出Router，给它注入history。<br>这样下面的代码就可以生效了：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createBrowserHistory &#125; <span class="keyword">from</span> <span class="string">'history'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> history = createBrowserHistory()</span><br><span class="line"></span><br><span class="line"><span class="comment">//进行跳转</span></span><br><span class="line">history.push(<span class="string">'/'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>再说说部署到服务器时，nginx的配置：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">location / &#123;</span><br><span class="line">  try_files $uri $uri/ /index.html;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这段的意思是如果 URL 匹配不到任何静态资源，则返回index.html页面，这个页面就是你app依赖的页面。</p>
+<p>注意，在history模式里，如果你使用create-react-app，不能在package.json里设置 <code>homepage: &#39;.&#39;</code> 即设置静态资源读取路径为相对路径。<br>如果是hash模式，则无所谓，使用绝对路径或相对路径都可以。</p>
+<p>使用react给我感觉就是，你一直在花很多时间搜索解决方案，react在坚持它先进理念的同时，也牺牲了很多便利。相比较而言vue就比较省心，使用起来不用有太多的心智负担。</p>
 
       
     </div>
@@ -456,8 +456,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/21/git常用命令/" rel="next" title="git常用命令">
-                <i class="fa fa-chevron-left"></i> git常用命令
+              <a href="/2019/10/10/常用命令/" rel="next" title="常用命令">
+                <i class="fa fa-chevron-left"></i> 常用命令
               </a>
             
           </div>
@@ -465,10 +465,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/11/拷贝/" rel="prev" title="拷贝">
-                拷贝 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -522,17 +518,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -636,22 +623,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#防抖"><span class="nav-number">1.</span> <span class="nav-text">防抖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#节流"><span class="nav-number">2.</span> <span class="nav-text">节流</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
