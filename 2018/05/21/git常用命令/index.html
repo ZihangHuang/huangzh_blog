@@ -114,18 +114,18 @@
 
 
 
-  <meta name="description" content="整理了一下 git 的常用命令 查看远程仓库1git remote -v 添加远程仓库1git remote add origin [地址] 提交12git pull origin master --allow-unrelated-histories #让本地仓库和远程仓库链接上，并拉取远程仓库git push origin master">
+  <meta name="description" content="整理了一下 git 的常用命令 查看远程仓库1git remote -v 添加远程仓库1git remote add origin [地址] 拉取和提交12345678git fetch origin master #拉取远程仓库，但不会自动mergegit pull origin master #拉取远程仓库，并合并到当前分支git pull origin master --allow-unre">
 <meta name="keywords" content="git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git常用命令">
 <meta property="og:url" content="https://zihanghuang.github.io/huangzh_blog/2018/05/21/git常用命令/index.html">
 <meta property="og:site_name" content="瓦尔德的森林">
-<meta property="og:description" content="整理了一下 git 的常用命令 查看远程仓库1git remote -v 添加远程仓库1git remote add origin [地址] 提交12git pull origin master --allow-unrelated-histories #让本地仓库和远程仓库链接上，并拉取远程仓库git push origin master">
+<meta property="og:description" content="整理了一下 git 的常用命令 查看远程仓库1git remote -v 添加远程仓库1git remote add origin [地址] 拉取和提交12345678git fetch origin master #拉取远程仓库，但不会自动mergegit pull origin master #拉取远程仓库，并合并到当前分支git pull origin master --allow-unre">
 <meta property="og:locale" content="chinese">
-<meta property="og:updated_time" content="2019-11-22T03:18:33.540Z">
+<meta property="og:updated_time" content="2020-01-06T03:43:31.420Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git常用命令">
-<meta name="twitter:description" content="整理了一下 git 的常用命令 查看远程仓库1git remote -v 添加远程仓库1git remote add origin [地址] 提交12git pull origin master --allow-unrelated-histories #让本地仓库和远程仓库链接上，并拉取远程仓库git push origin master">
+<meta name="twitter:description" content="整理了一下 git 的常用命令 查看远程仓库1git remote -v 添加远程仓库1git remote add origin [地址] 拉取和提交12345678git fetch origin master #拉取远程仓库，但不会自动mergegit pull origin master #拉取远程仓库，并合并到当前分支git pull origin master --allow-unre">
 
 
 
@@ -366,7 +366,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-11-22 11:18:33" itemprop="dateModified" datetime="2019-11-22T11:18:33+08:00">2019-11-22</time>
+                <time title="Modified: 2020-01-06 11:43:31" itemprop="dateModified" datetime="2020-01-06T11:43:31+08:00">2020-01-06</time>
               
             
           </span>
@@ -420,7 +420,7 @@
         <p>整理了一下 git 的常用命令</p>
 <h3 id="查看远程仓库"><a href="#查看远程仓库" class="headerlink" title="查看远程仓库"></a>查看远程仓库</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
 <h3 id="添加远程仓库"><a href="#添加远程仓库" class="headerlink" title="添加远程仓库"></a>添加远程仓库</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin [地址]</span><br></pre></td></tr></table></figure>
-<h3 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master --allow-unrelated-histories #让本地仓库和远程仓库链接上，并拉取远程仓库</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+<h3 id="拉取和提交"><a href="#拉取和提交" class="headerlink" title="拉取和提交"></a>拉取和提交</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin master #拉取远程仓库，但不会自动merge</span><br><span class="line"></span><br><span class="line">git pull origin master #拉取远程仓库，并合并到当前分支</span><br><span class="line">git pull origin master --allow-unrelated-histories #让本地仓库和远程仓库链接上，并拉取远程仓库</span><br><span class="line"></span><br><span class="line">git pull = git fetch + git merge</span><br><span class="line"></span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <h3 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD^ #回退到上版本，不会重置工作区，会撤销git add .</span><br><span class="line">git reset --mixed HEAD^    #默认形式，和 git reset HEAD^ 一样</span><br><span class="line">git reset --hard HEAD^    #回退到上版本，会重置工作区，会撤销git add .</span><br><span class="line">git reset --soft HEAD^    #回退到上版本，不会重置工作区，不会撤销git add .</span><br><span class="line"></span><br><span class="line">git reset --hard HEAD^^    #回退到上上版本</span><br><span class="line">git reset --hard [commit] #回退到某个版本号</span><br><span class="line">git log   #查看提交日记</span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -431,6 +431,8 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git checkout [file] #重置工作区文件</span><br><span class="line">git checkout . #重置工作区全部文件</span><br><span class="line">git reset [file] #重置暂存区的文件，与上一次commit保持一致，但工作区不变，是下面的简写形式</span><br><span class="line">git reset --mixed HEAD [file]</span><br></pre></td></tr></table></figure>
 <h3 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b haha #创建新分支haha</span><br><span class="line"></span><br><span class="line">git checkout master #切换到主分支</span><br><span class="line"></span><br><span class="line">git merge dev # 合并</span><br><span class="line"></span><br><span class="line">git branch -d dev #删除dev分支</span><br><span class="line"></span><br><span class="line">git push origin -d dev # 删除远程分支</span><br></pre></td></tr></table></figure>
 <h3 id="查看修改内容"><a href="#查看修改内容" class="headerlink" title="查看修改内容"></a>查看修改内容</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git diff #查看暂存区和工作区的差异</span><br><span class="line">git diff --cached #查看暂存区和上一个commit的差异</span><br></pre></td></tr></table></figure>
+<h3 id="git-stash"><a href="#git-stash" class="headerlink" title="git stash"></a>git stash</h3><p>假如你在本地新建了一个dev分支，用于开发新功能。然后master分支有bug需要处理。你不想把还没完成的功能commit，但是不commit的话切换到master分支时依旧有dev分支的修改。这时候就可以在dev分支使用git stash，把修改内容保存到stash中，这样切换到master分支时，就会保持和原来的一致。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">git stash #直接把代码保存到stash</span><br><span class="line">git stash save "message" #保存到stash，并加上注释（不包含新文件）</span><br><span class="line">git stash save -a "message" #保存到stash，并加上注释（包含新文件）</span><br><span class="line"></span><br><span class="line">git stash #查看所有stash</span><br><span class="line"></span><br><span class="line">git stash pop #弹出stash里最后一个存储</span><br><span class="line">git stash pop stash@&#123;n&#125; #弹出stash里指定的存储</span><br><span class="line">git stash apply #弹出stash里最后一个存储，但stash里依旧存在</span><br><span class="line">git stash apply stash@&#123;n&#125; #弹出stash里指定的存储，但stash里依旧存在</span><br><span class="line"></span><br><span class="line">git stash drop stash@&#123;n&#125; #删除指定的stash</span><br><span class="line">git stash clear #清空所有stash</span><br></pre></td></tr></table></figure>
 <!-- 如果post_asset_folder为false，图片统一放在source/images文件夹，用![](/images/image.jpg)引用
 如果post_asset_folder为true，图片放在跟文章对应的同名文件夹的assets文件夹即可，引用语法如下,但每次新建文章都会创建对应的同名文件夹.
  –&gt;
@@ -653,7 +655,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看远程仓库"><span class="nav-number">1.</span> <span class="nav-text">查看远程仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加远程仓库"><span class="nav-number">2.</span> <span class="nav-text">添加远程仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提交"><span class="nav-number">3.</span> <span class="nav-text">提交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#版本回退"><span class="nav-number">4.</span> <span class="nav-text">版本回退</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销命令"><span class="nav-number">5.</span> <span class="nav-text">撤销命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分支"><span class="nav-number">6.</span> <span class="nav-text">分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看修改内容"><span class="nav-number">7.</span> <span class="nav-text">查看修改内容</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看远程仓库"><span class="nav-number">1.</span> <span class="nav-text">查看远程仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加远程仓库"><span class="nav-number">2.</span> <span class="nav-text">添加远程仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拉取和提交"><span class="nav-number">3.</span> <span class="nav-text">拉取和提交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#版本回退"><span class="nav-number">4.</span> <span class="nav-text">版本回退</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销命令"><span class="nav-number">5.</span> <span class="nav-text">撤销命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分支"><span class="nav-number">6.</span> <span class="nav-text">分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看修改内容"><span class="nav-number">7.</span> <span class="nav-text">查看修改内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-stash"><span class="nav-number">8.</span> <span class="nav-text">git stash</span></a></li></ol></div>
             
 
           </div>
@@ -673,7 +675,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>

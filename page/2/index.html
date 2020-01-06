@@ -1418,7 +1418,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-11-22 11:18:33" itemprop="dateModified" datetime="2019-11-22T11:18:33+08:00">2019-11-22</time>
+                <time title="Modified: 2020-01-06 11:43:31" itemprop="dateModified" datetime="2020-01-06T11:43:31+08:00">2020-01-06</time>
               
             
           </span>
@@ -1473,7 +1473,7 @@
           <p>整理了一下 git 的常用命令</p>
 <h3 id="查看远程仓库"><a href="#查看远程仓库" class="headerlink" title="查看远程仓库"></a>查看远程仓库</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
 <h3 id="添加远程仓库"><a href="#添加远程仓库" class="headerlink" title="添加远程仓库"></a>添加远程仓库</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin [地址]</span><br></pre></td></tr></table></figure>
-<h3 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master --allow-unrelated-histories #让本地仓库和远程仓库链接上，并拉取远程仓库</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+<h3 id="拉取和提交"><a href="#拉取和提交" class="headerlink" title="拉取和提交"></a>拉取和提交</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin master #拉取远程仓库，但不会自动merge</span><br><span class="line"></span><br><span class="line">git pull origin master #拉取远程仓库，并合并到当前分支</span><br><span class="line">git pull origin master --allow-unrelated-histories #让本地仓库和远程仓库链接上，并拉取远程仓库</span><br><span class="line"></span><br><span class="line">git pull = git fetch + git merge</span><br><span class="line"></span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/05/21/git常用命令/#more" rel="contents">
@@ -1667,7 +1667,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
