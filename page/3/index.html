@@ -114,25 +114,23 @@
 
 
 
-  <meta name="description" content="拷贝有两种：浅拷贝和深拷贝。 记录 js 两种拷贝的简单方法。">
-<meta name="keywords" content="前端">
-<meta property="og:type" content="article">
-<meta property="og:title" content="拷贝">
-<meta property="og:url" content="https://zihanghuang.github.io/huangzh_blog/2018/06/11/拷贝/index.html">
+  <meta name="description" content="前端，技术，文学">
+<meta property="og:type" content="website">
+<meta property="og:title" content="瓦尔德的森林">
+<meta property="og:url" content="https://zihanghuang.github.io/huangzh_blog/page/3/index.html">
 <meta property="og:site_name" content="瓦尔德的森林">
-<meta property="og:description" content="拷贝有两种：浅拷贝和深拷贝。 记录 js 两种拷贝的简单方法。">
+<meta property="og:description" content="前端，技术，文学">
 <meta property="og:locale" content="chinese">
-<meta property="og:updated_time" content="2020-05-11T09:15:19.165Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="拷贝">
-<meta name="twitter:description" content="拷贝有两种：浅拷贝和深拷贝。 记录 js 两种拷贝的简单方法。">
+<meta name="twitter:title" content="瓦尔德的森林">
+<meta name="twitter:description" content="前端，技术，文学">
 
 
 
 
 
 
-  <link rel="canonical" href="https://zihanghuang.github.io/huangzh_blog/2018/06/11/拷贝/"/>
+  <link rel="canonical" href="https://zihanghuang.github.io/huangzh_blog/page/3/"/>
 
 
 
@@ -142,7 +140,7 @@
   };
 </script>
 
-  <title>拷贝 | 瓦尔德的森林</title>
+  <title>瓦尔德的森林</title>
   
 
 
@@ -189,7 +187,8 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left 
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -290,9 +289,9 @@
           
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
 
   
 
@@ -307,7 +306,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zihanghuang.github.io/huangzh_blog/2018/06/11/拷贝/">
+    <link itemprop="mainEntityOfPage" href="https://zihanghuang.github.io/huangzh_blog/2018/05/21/git常用命令/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="BoBo">
@@ -324,7 +323,11 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">拷贝
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/21/git常用命令/" itemprop="url">
+                  git常用命令
+                </a>
               
             
           </h1>
@@ -349,7 +352,7 @@
                 
               
 
-              <time title="Created: 2018-06-11 20:07:50" itemprop="dateCreated datePublished" datetime="2018-06-11T20:07:50+08:00">2018-06-11</time>
+              <time title="Created: 2018-05-21 22:39:17" itemprop="dateCreated datePublished" datetime="2018-05-21T22:39:17+08:00">2018-05-21</time>
             
 
             
@@ -366,7 +369,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-05-11 17:15:19" itemprop="dateModified" datetime="2020-05-11T17:15:19+08:00">2020-05-11</time>
+                <time title="Modified: 2020-06-18 17:36:26" itemprop="dateModified" datetime="2020-06-18T17:36:26+08:00">2020-06-18</time>
               
             
           </span>
@@ -417,12 +420,24 @@
       
 
       
-        <p>拷贝有两种：浅拷贝和深拷贝。</p>
-<p>记录 js 两种拷贝的简单方法。</p>
-<a id="more"></a>
-<h3 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj1 = &#123; <span class="attr">a</span>: <span class="number">0</span>, <span class="attr">b</span>: &#123; <span class="attr">c</span>: <span class="number">0</span> &#125; &#125;;</span><br><span class="line"><span class="keyword">let</span> obj2 = <span class="built_in">Object</span>.assign(&#123;&#125;, obj1);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(obj2)); <span class="comment">// &#123; a: 0, b: &#123; c: 0&#125;&#125;</span></span><br><span class="line"></span><br><span class="line">obj1.a = <span class="number">1</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(obj1)); <span class="comment">// &#123; a: 1, b: &#123; c: 0&#125;&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(obj2)); <span class="comment">// &#123; a: 0, b: &#123; c: 0&#125;&#125;</span></span><br><span class="line"></span><br><span class="line">obj2.a = <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(obj1)); <span class="comment">// &#123; a: 1, b: &#123; c: 0&#125;&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(obj2)); <span class="comment">// &#123; a: 2, b: &#123; c: 0&#125;&#125;</span></span><br><span class="line"></span><br><span class="line">obj2.b.c = <span class="number">3</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(obj1)); <span class="comment">// &#123; a: 1, b: &#123; c: 3&#125;&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(obj2)); <span class="comment">// &#123; a: 2, b: &#123; c: 3&#125;&#125;</span></span><br></pre></td></tr></table></figure>
-<h3 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">obj1 = &#123; <span class="attr">a</span>: <span class="number">0</span>, <span class="attr">b</span>: &#123; <span class="attr">c</span>: <span class="number">0</span> &#125; &#125;;</span><br><span class="line"><span class="keyword">let</span> obj3 = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(obj1));</span><br><span class="line">obj1.a = <span class="number">4</span>;</span><br><span class="line">obj1.b.c = <span class="number">4</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(obj3)); <span class="comment">// &#123; a: 0, b: &#123; c: 0&#125;&#125;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepClone</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> o;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> obj === <span class="string">"object"</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (obj === <span class="literal">null</span>) &#123;</span><br><span class="line">            o = <span class="literal">null</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (obj <span class="keyword">instanceof</span> <span class="built_in">Array</span>) &#123;</span><br><span class="line">                o = [];</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, len = obj.length; i &lt; len; i++) &#123;</span><br><span class="line">                    o.push(deepClone(obj[i]));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                o = &#123;&#125;;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">var</span> j <span class="keyword">in</span> obj) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (obj.hasOwnProperty(j)) o[j] = deepClone(obj[j]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        o = obj;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> o;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+        
+          <p>整理了一下 git等 的常用命令</p>
+<h3 id="生成ssh-key"><a href="#生成ssh-key" class="headerlink" title="生成ssh key"></a>生成ssh key</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C "yourmail@gmail.com"</span><br></pre></td></tr></table></figure>
+<h3 id="打开ssh-agent"><a href="#打开ssh-agent" class="headerlink" title="打开ssh-agent"></a>打开ssh-agent</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eval $(ssh-agent -s)</span><br></pre></td></tr></table></figure>
+<h3 id="添加私钥"><a href="#添加私钥" class="headerlink" title="添加私钥"></a>添加私钥</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-add ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
+<h3 id="创建或修改config文件"><a href="#创建或修改config文件" class="headerlink" title="创建或修改config文件"></a>创建或修改config文件</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>github  </span><br><span class="line">Host github.com #别名</span><br><span class="line">HostName github.com #域名或ip</span><br><span class="line">User 用户名</span><br><span class="line">IdentityFile ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
+<h3 id="设置或删除git全局用户名和邮箱"><a href="#设置或删除git全局用户名和邮箱" class="headerlink" title="设置或删除git全局用户名和邮箱"></a>设置或删除git全局用户名和邮箱</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git config --global --unset user.name</span><br><span class="line">git config --global --unset user.email</span><br><span class="line">git config user.name "yourname"</span><br><span class="line">git config user.email "youremail"</span><br></pre></td></tr></table></figure>
+<h3 id="查看远程仓库"><a href="#查看远程仓库" class="headerlink" title="查看远程仓库"></a>查看远程仓库</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
+<h3 id="添加远程仓库"><a href="#添加远程仓库" class="headerlink" title="添加远程仓库"></a>添加远程仓库</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin [地址]</span><br></pre></td></tr></table></figure>
+<h3 id="拉取和提交"><a href="#拉取和提交" class="headerlink" title="拉取和提交"></a>拉取和提交</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin master #拉取远程仓库，但不会自动merge</span><br><span class="line"></span><br><span class="line">git pull origin master #拉取远程仓库，并合并到当前分支</span><br><span class="line">git pull origin master --allow-unrelated-histories #让本地仓库和远程仓库链接上，并拉取远程仓库</span><br><span class="line"></span><br><span class="line">git pull = git fetch + git merge</span><br><span class="line"></span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/21/git常用命令/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -440,40 +455,14 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/前端/" rel="tag"># 前端</a>
-          
-        </div>
+
+      
+
       
 
       
       
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/05/26/防抖和节流/" rel="next" title="防抖和节流">
-                <i class="fa fa-chevron-left"></i> 防抖和节流
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/13/node-redis/" rel="prev" title="node_redis的一个例子">
-                node_redis的一个例子 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -483,24 +472,18 @@
   </article>
 
 
+    
+  </section>
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
+
 
 
           </div>
           
-
-  
-    <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC8zOTAyNS8xNTU1Mg=="></div>
-    </div>
-
-  
-
-
 
         </div>
         
@@ -521,17 +504,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -643,22 +617,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#浅拷贝"><span class="nav-number">1.</span> <span class="nav-text">浅拷贝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#深拷贝"><span class="nav-number">2.</span> <span class="nav-text">深拷贝</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -786,10 +744,6 @@
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
-
-
 
   
 
@@ -814,17 +768,6 @@
 
 
 
-  
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
   
 
 
