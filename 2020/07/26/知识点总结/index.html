@@ -122,7 +122,7 @@
 <meta property="og:site_name" content="瓦尔德的森林">
 <meta property="og:description" content="常用知识点">
 <meta property="og:locale" content="chinese">
-<meta property="og:updated_time" content="2020-07-26T10:32:03.243Z">
+<meta property="og:updated_time" content="2020-07-27T01:57:55.306Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="知识点总结">
 <meta name="twitter:description" content="常用知识点">
@@ -349,12 +349,24 @@
                 
               
 
-              <time title="Created: 2020-07-26 18:27:51 / Modified: 18:32:03" itemprop="dateCreated datePublished" datetime="2020-07-26T18:27:51+08:00">2020-07-26</time>
+              <time title="Created: 2020-07-26 18:27:51" itemprop="dateCreated datePublished" datetime="2020-07-26T18:27:51+08:00">2020-07-26</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2020-07-27 09:57:55" itemprop="dateModified" datetime="2020-07-27T09:57:55+08:00">2020-07-27</time>
               
             
           </span>
@@ -421,7 +433,11 @@
 <p>当弹框消失的时候</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$("body").css("position","relative")</span><br></pre></td></tr></table></figure>
 </li>
+<li><p>IOS设置position:fixed，键盘遮住输入框</p>
+</li>
 </ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 设置一个定时器在输入框获取焦点的时候一直刷新输入框的位置，然后在失去焦点的时候清除</span></span><br><span class="line">clearInterval(<span class="keyword">this</span>.resizeInputInterval);</span><br><span class="line"><span class="keyword">this</span>.resizeInputInterval = setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">this</span>.input.scrollIntoView(<span class="literal">true</span>); <span class="comment">// 元素的顶端将和其所在滚动区的可视区域的顶端对齐</span></span><br><span class="line">&#125;, <span class="number">100</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> windheight = $(<span class="built_in">window</span>).height();  <span class="comment">/*未唤起键盘时当前窗口高度*/</span></span><br><span class="line">$(<span class="built_in">window</span>).resize(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">   <span class="keyword">var</span> docheight = $(<span class="built_in">window</span>).height();  <span class="comment">/*唤起键盘时当前窗口高度*/</span>        </span><br><span class="line">   <span class="keyword">if</span>(docheight &lt; windheight)&#123;            <span class="comment">/*当唤起键盘高度小于未唤起键盘高度时执行*/</span></span><br><span class="line">      $(<span class="string">"input"</span>).css(<span class="string">"position"</span>,<span class="string">"static"</span>);</span><br><span class="line">   &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      $(<span class="string">"input"</span>).css(<span class="string">"position"</span>,<span class="string">"fixed"</span>);</span><br><span class="line">   &#125;           </span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 或者在输入框聚焦失焦时设置position</span></span><br></pre></td></tr></table></figure>
 <h3 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h3><table>
 <thead>
 <tr>
@@ -468,7 +484,8 @@
 </tr>
 </tbody>
 </table>
-<h4 id="为什么建立连接协议是三次握手，而关闭连接却是四次握手呢？"><a href="#为什么建立连接协议是三次握手，而关闭连接却是四次握手呢？" class="headerlink" title="为什么建立连接协议是三次握手，而关闭连接却是四次握手呢？"></a>为什么建立连接协议是三次握手，而关闭连接却是四次握手呢？</h4><p>这是由于服务端的LISTEN状态下的SOCKET当收到SYN报文的建连请求后。它能够把ACK和SYN（ACK起应答作用。而SYN起同步作用）放在一个报文里来发送。但关闭连接时，当收到对方的FIN报文通知时，它只表示对方没有数据发送给你了。但未必你所有的数据都所有发送给对方了。所以你能够未必会立即会关闭SOCKET,也即你可能还须要发送一些数据给对方之后，再发送FIN报文给对方来表示你允许如今能够关闭连接了。所以它这里的ACK报文和FIN报文多数情况下都是分开发送的。</p>
+<h4 id="为什么建立连接协议是三次握手，而关闭连接却是四次握手呢？"><a href="#为什么建立连接协议是三次握手，而关闭连接却是四次握手呢？" class="headerlink" title="为什么建立连接协议是三次握手，而关闭连接却是四次握手呢？"></a>为什么建立连接协议是三次握手，而关闭连接却是四次握手呢？</h4><p>这是由于服务端的LISTEN状态下的SOCKET当收到SYN报文的建立请求后。它能够把ACK和SYN（ACK起应答作用。而SYN起同步作用）放在一个报文里来发送。但关闭连接时，当收到对方的FIN报文通知时，它只表示对方没有数据发送给你了。但服务端可能还需要再发送一些数据给客户端。所以服务端不能立即会关闭SOCKET，先发送ACK客户端，等服务器确认可以关闭了，再发送FIN报文给对方来表示它也能够关闭连接了。服务端这里的ACK报文和FIN报文多数情况下都是分开发送的。</p>
+<p>A：B 啊，我不想玩了。<br>B：哦，你不想玩了啊，我知道了。<br>B：A 啊，好吧，我也不玩了，拜拜。<br>A：好的，拜拜。</p>
 <h3 id="IntersectionObserver"><a href="#IntersectionObserver" class="headerlink" title="IntersectionObserver"></a>IntersectionObserver</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//监听area出现在屏幕时做一些事件</span></span><br><span class="line"><span class="keyword">var</span> io = <span class="keyword">new</span> IntersectionObserver(<span class="function"><span class="keyword">function</span>(<span class="params">entries</span>) </span>&#123;</span><br><span class="line">    entries.forEach(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(item.intersectionRatio &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="comment">//Appears on the viewport</span></span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">//Leave in the viewport</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">io.observe(<span class="built_in">document</span>.getElementById(<span class="string">'area'</span>));</span><br></pre></td></tr></table></figure>
 <h3 id="异步脚本"><a href="#异步脚本" class="headerlink" title="异步脚本"></a>异步脚本</h3><p><code>&lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;</code></p>
 <p>没有 defer 或 async，浏览器会立即加载并执行指定的脚本，“立即”指的是在渲染该 script 标签之下的文档元素之前，也就是说不等待后续载入的文档元素，读到就加载并执行。</p>
@@ -505,8 +522,8 @@
 <li>使用requestAninationFrame代替定时器来实现动画</li>
 </ul>
 <h3 id="箭头函数与普通函数区别"><a href="#箭头函数与普通函数区别" class="headerlink" title="箭头函数与普通函数区别"></a>箭头函数与普通函数区别</h3><ul>
+<li>箭头函数是匿名函数，不能作为构造函数，不能使用new</li>
 <li>箭头函数没有prototype</li>
-<li>箭头函数不能</li>
 <li>普通函数的this非严格模式下指向window，严格模式指向undefined。箭头函数两种模式下都指向window</li>
 <li>箭头函数不能使用new.target和arguments，如果是套在普通函数内，则这两个都指向普通函数。</li>
 <li>对象的方法不宜使用箭头函数，当它的是指向外层函数的，如果没有外层函数则指向全局对象。</li>
