@@ -114,18 +114,18 @@
 
 
 
-  <meta name="description" content="整理了一下 git等 的常用命令 生成ssh key1ssh-keygen -t rsa -C &quot;yourmail@gmail.com&quot; 打开ssh-agent1eval $(ssh-agent -s) 添加私钥1ssh-add ~/.ssh/id_rsa 创建或修改config文件12345#github  Host github.com #别名HostName github.com #域名或i">
+  <meta name="description" content="整理了一下 git等 的常用命令">
 <meta name="keywords" content="git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git常用命令">
 <meta property="og:url" content="https://zihanghuang.github.io/huangzh_blog/2018/05/21/git常用命令/index.html">
 <meta property="og:site_name" content="瓦尔德的森林">
-<meta property="og:description" content="整理了一下 git等 的常用命令 生成ssh key1ssh-keygen -t rsa -C &quot;yourmail@gmail.com&quot; 打开ssh-agent1eval $(ssh-agent -s) 添加私钥1ssh-add ~/.ssh/id_rsa 创建或修改config文件12345#github  Host github.com #别名HostName github.com #域名或i">
+<meta property="og:description" content="整理了一下 git等 的常用命令">
 <meta property="og:locale" content="chinese">
-<meta property="og:updated_time" content="2020-12-24T11:48:46.976Z">
+<meta property="og:updated_time" content="2021-01-11T02:35:36.863Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git常用命令">
-<meta name="twitter:description" content="整理了一下 git等 的常用命令 生成ssh key1ssh-keygen -t rsa -C &quot;yourmail@gmail.com&quot; 打开ssh-agent1eval $(ssh-agent -s) 添加私钥1ssh-add ~/.ssh/id_rsa 创建或修改config文件12345#github  Host github.com #别名HostName github.com #域名或i">
+<meta name="twitter:description" content="整理了一下 git等 的常用命令">
 
 
 
@@ -366,7 +366,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-12-24 19:48:46" itemprop="dateModified" datetime="2020-12-24T19:48:46+08:00">2020-12-24</time>
+                <time title="Modified: 2021-01-11 10:35:36" itemprop="dateModified" datetime="2021-01-11T10:35:36+08:00">2021-01-11</time>
               
             
           </span>
@@ -418,6 +418,7 @@
 
       
         <p>整理了一下 git等 的常用命令</p>
+<a id="more"></a>
 <h3 id="生成ssh-key"><a href="#生成ssh-key" class="headerlink" title="生成ssh key"></a>生成ssh key</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C "yourmail@gmail.com"</span><br></pre></td></tr></table></figure>
 <h3 id="打开ssh-agent"><a href="#打开ssh-agent" class="headerlink" title="打开ssh-agent"></a>打开ssh-agent</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eval $(ssh-agent -s)</span><br></pre></td></tr></table></figure>
 <h3 id="添加私钥"><a href="#添加私钥" class="headerlink" title="添加私钥"></a>添加私钥</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-add ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
@@ -426,7 +427,6 @@
 <h3 id="查看远程仓库"><a href="#查看远程仓库" class="headerlink" title="查看远程仓库"></a>查看远程仓库</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
 <h3 id="添加远程仓库"><a href="#添加远程仓库" class="headerlink" title="添加远程仓库"></a>添加远程仓库</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin [地址]</span><br></pre></td></tr></table></figure>
 <h3 id="拉取和提交"><a href="#拉取和提交" class="headerlink" title="拉取和提交"></a>拉取和提交</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin master #拉取远程仓库，但不会自动merge</span><br><span class="line"></span><br><span class="line">git pull origin master #拉取远程仓库，并合并到当前分支</span><br><span class="line">git pull origin master --allow-unrelated-histories #让本地仓库和远程仓库链接上，并拉取远程仓库</span><br><span class="line"></span><br><span class="line">git pull = git fetch + git merge</span><br><span class="line"></span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
 <h3 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD^ #回退到上版本，不会重置工作区，会撤销git add .</span><br><span class="line">git reset --mixed HEAD^    #默认形式，和 git reset HEAD^ 一样</span><br><span class="line">git reset --hard HEAD^    #回退到上版本，会重置工作区，会撤销git add .</span><br><span class="line">git reset --soft HEAD^    #回退到上版本，不会重置工作区，不会撤销git add .</span><br><span class="line"></span><br><span class="line">git reset --hard HEAD^^    #回退到上上版本</span><br><span class="line">git reset --hard [commit] #回退到某个版本号</span><br><span class="line">git log   #查看提交日记</span><br><span class="line"></span><br><span class="line">git push origin [分支名] -f </span><br><span class="line"><span class="meta">#</span>将回退同步到远程仓库，本地分支回滚后，版本将落后远程分支，必须使用强制推送覆盖远程分支</span><br><span class="line"></span><br><span class="line">git reset --hard origin/分支 #用git reset撤回了提交，然后同步到了远端仓库，其他人可以用这个强制和远程版本一致，但是不建议使用</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>用<code>git reset --hard HEAD^</code> 回退到某一个以前版本后，再 git log 已经看不到新的版本。如果想撤销回退，就必须找到 append GPL 的 commit id。<br>当你命令行界面还没关闭时，你可以往上看那个新版本的 commit id，然后再<code>git reset --hard 版本号</code>。<br>如果已经关了界面，Git 提供了一个命令<code>git reflog</code>用来记录当前分支的提交记录，你可以找到那个新版本的 commit id。</p>
@@ -435,14 +435,14 @@
 <p>或者这两步可以用<code>git reset --hard</code>代替，但会撤销全部文件。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git checkout [file] #重置工作区文件</span><br><span class="line">git checkout . #重置工作区全部文件</span><br><span class="line">git reset [file] #重置暂存区的文件，与上一次commit保持一致，但工作区不变，是下面的简写形式</span><br><span class="line">git reset --mixed HEAD [file]</span><br></pre></td></tr></table></figure>
 <h3 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">git branch -a #查看包括远程仓库的所有分支，如果远程仓库有了新分支，要先git pull拉下来</span><br><span class="line"></span><br><span class="line">git checkout -b haha #创建新分支haha</span><br><span class="line"></span><br><span class="line">git branch "本地新建分支名" "远程分支名" #本地新建分支和远程分支关联起来</span><br><span class="line"></span><br><span class="line">git checkout master #切换到主分支</span><br><span class="line"></span><br><span class="line">git merge dev #合并</span><br><span class="line"></span><br><span class="line">git rebase master #变基，一般用在开发分支合并master分支的修改，和merge的区别是产生的历史记录是直线的，比较简洁</span><br><span class="line"></span><br><span class="line">git branch -d dev #删除dev分支</span><br><span class="line"></span><br><span class="line">git push origin -d dev # 删除远程分支</span><br><span class="line"></span><br><span class="line">git branch -m "旧分支名" "新分支名"</span><br></pre></td></tr></table></figure>
-<h3 id="查看修改内容"><a href="#查看修改内容" class="headerlink" title="查看修改内容"></a>查看修改内容</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git diff #查看暂存区和工作区的差异</span><br><span class="line">git diff --cached #查看暂存区和上一个commit的差异</span><br></pre></td></tr></table></figure>
+<h3 id="查看修改内容"><a href="#查看修改内容" class="headerlink" title="查看修改内容"></a>查看修改内容</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git diff #查看暂存区和工作区的差异</span><br><span class="line">git diff --cached #查看暂存区和上一个commit的差异</span><br><span class="line">git diff --name-only --diff-filter=U #查看冲突文件</span><br></pre></td></tr></table></figure>
 <h3 id="git-stash"><a href="#git-stash" class="headerlink" title="git stash"></a>git stash</h3><p>假如你在本地新建了一个dev分支，用于开发新功能。然后master分支有bug需要处理。你不想把还没完成的功能commit，但是不commit的话切换到master分支时依旧有dev分支的修改。这时候就可以在dev分支使用git stash，把修改内容保存到stash中，这样切换到master分支时，就会保持和原来的一致。<br>注意：需要<code>git add</code>后才能<code>git stash</code></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">git stash #直接把代码保存到stash</span><br><span class="line">git stash save "message" #保存到stash，并加上注释（不包含新文件）</span><br><span class="line">git stash save -a "message" #保存到stash，并加上注释（包含新文件）</span><br><span class="line"></span><br><span class="line">git stash list #查看所有stash</span><br><span class="line"></span><br><span class="line">git stash pop #弹出stash里最后一个存储</span><br><span class="line">git stash pop stash@&#123;n&#125; #弹出stash里指定的存储</span><br><span class="line">git stash apply #弹出stash里最后一个存储，但stash里依旧存在</span><br><span class="line">git stash apply stash@&#123;n&#125; #弹出stash里指定的存储，但stash里依旧存在</span><br><span class="line"></span><br><span class="line">git stash drop stash@&#123;n&#125; #删除指定的stash</span><br><span class="line">git stash clear #清空所有stash</span><br></pre></td></tr></table></figure>
 <h3 id="git-tag"><a href="#git-tag" class="headerlink" title="git tag"></a>git tag</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">git tag &lt;name&gt; #新建一个标签，默认为HEAD，也可以指定一个commit id</span><br><span class="line"></span><br><span class="line">git tag -a &lt;tagname&gt; -m "blablabla..." #可以指定标签信息</span><br><span class="line"></span><br><span class="line">git tag #可以查看所有标签</span><br><span class="line"></span><br><span class="line">git tag -d &lt;name&gt; #删除标签</span><br><span class="line"></span><br><span class="line">git push origin &lt;tagname&gt; #推送tag到远程仓库</span><br><span class="line"></span><br><span class="line">git push origin --tags #一次性推送全部尚未推送到远程的本地标签</span><br><span class="line"></span><br><span class="line">git push origin :refs/tags/标签名  #删除远程标签(要先删除本地标签)</span><br></pre></td></tr></table></figure>
 <h3 id="代码提交流程"><a href="#代码提交流程" class="headerlink" title="代码提交流程"></a>代码提交流程</h3><ol>
 <li>将本地修改的代码切换到一条本地新分支上（<code>git checkout -b dev</code>），注意切换前保证本地dev分支不存在</li>
 <li>在本地dev分支将代码追踪（<code>git add .</code>）</li>
-<li>在本地dev分支将代码提交（<code>npm run commit</code>），按提示填写commit说明信息</li>
+<li>在本地dev分支将代码提交（<code>git commit</code>）</li>
 <li>完成提交后，切换到本地master分支，此时的本地master分支应该是干净无任何修改的（<code>git checkout master</code>）</li>
 <li>在本地master分支上拉取远程master分支最新代码（<code>git pull</code>）</li>
 <li>切换到本地dev分支（<code>git checkout dev</code>），合并本地master分支（<code>git rebase master</code>），若有冲突就解决冲突并追踪（<code>git add .</code>），之后继续合并（<code>git rebase --continue</code>），直至代码完全合并</li>
@@ -700,7 +700,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
