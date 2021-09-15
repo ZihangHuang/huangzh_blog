@@ -122,7 +122,7 @@
 <meta property="og:site_name" content="挪威的森林">
 <meta property="og:description" content="常用知识点">
 <meta property="og:locale" content="chinese">
-<meta property="og:updated_time" content="2020-10-15T02:27:37.628Z">
+<meta property="og:updated_time" content="2021-09-06T06:58:04.888Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="知识点总结">
 <meta name="twitter:description" content="常用知识点">
@@ -366,7 +366,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-10-15 10:27:37" itemprop="dateModified" datetime="2020-10-15T10:27:37+08:00">2020-10-15</time>
+                <time title="Modified: 2021-09-06 14:58:04" itemprop="dateModified" datetime="2021-09-06T14:58:04+08:00">2021-09-06</time>
               
             
           </span>
@@ -425,6 +425,9 @@
 <h3 id="浏览器和Node-事件循环的区别"><a href="#浏览器和Node-事件循环的区别" class="headerlink" title="浏览器和Node 事件循环的区别"></a>浏览器和Node 事件循环的区别</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">'start'</span>)</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'children2'</span>)</span><br><span class="line">        <span class="built_in">Promise</span>.resolve().then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;<span class="built_in">console</span>.log(<span class="string">'children2-1'</span>)&#125;)</span><br><span class="line">    &#125;, <span class="number">0</span>)</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'children3'</span>)</span><br><span class="line">        <span class="built_in">Promise</span>.resolve().then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;<span class="built_in">console</span>.log(<span class="string">'children3-1'</span>)&#125;)</span><br><span class="line">    &#125;, <span class="number">0</span>)</span><br><span class="line">    <span class="built_in">Promise</span>.resolve().then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;<span class="built_in">console</span>.log(<span class="string">'children1'</span>)&#125;)</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'end'</span>) </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 以上代码在node11以下版本的执行结果(先执行所有的宏任务，再执行微任务)</span></span><br><span class="line"><span class="comment">// start</span></span><br><span class="line"><span class="comment">// end</span></span><br><span class="line"><span class="comment">// children1</span></span><br><span class="line"><span class="comment">// children2</span></span><br><span class="line"><span class="comment">// children3</span></span><br><span class="line"><span class="comment">// children2-1</span></span><br><span class="line"><span class="comment">// children3-1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 以上代码在node11及浏览器的执行结果(顺序执行宏任务和微任务)</span></span><br><span class="line"><span class="comment">// start</span></span><br><span class="line"><span class="comment">// end</span></span><br><span class="line"><span class="comment">// children1</span></span><br><span class="line"><span class="comment">// children2</span></span><br><span class="line"><span class="comment">// children2-1</span></span><br><span class="line"><span class="comment">// children3</span></span><br><span class="line"><span class="comment">// children3-1</span></span><br></pre></td></tr></table></figure>
 <h3 id="createObjectURL"><a href="#createObjectURL" class="headerlink" title="createObjectURL"></a>createObjectURL</h3><p>使用window.URL.createObjectURL预览图片，在图片加载成功后需要清除使用的内存window.URL.revokeObjectURL(src);</p>
 <h3 id="白屏时间和首屏时间"><a href="#白屏时间和首屏时间" class="headerlink" title="白屏时间和首屏时间"></a>白屏时间和首屏时间</h3><p>白屏是指浏览器从响应用户输入网址地址，到浏览器开始显示内容的时间。<br>首屏时间是指浏览器从响应用户输入网络地址，到首屏内容渲染完成的时间。<br>影响白屏时间的因素：网络，服务端性能，前端页面结构设计。<br>影响首屏时间的因素：白屏时间，资源下载执行时间。</p>
+<p>简单的计算白屏时间：在<code>window.onload</code>里执行<code>new Date() - performance.timing.navigationStart</code>，或者获取<code>performance.now()</code></p>
+<p><code>performance.timing.navigationStart + performance.now()</code> 约等于 <code>Date.now()</code>。</p>
+<p><code>performance.getEntries()</code>方法可以查询页面内加载的所有资源的开始时间、耗时等信息，包括css、js、图片、字体文件、异步请求等。</p>
 <h3 id="兼容性问题"><a href="#兼容性问题" class="headerlink" title="兼容性问题"></a>兼容性问题</h3><ul>
 <li><p>IE6中，第一个浮动到父元素边上的元素，如果含有该方向的margin值，那么margin会以双倍显示。即：浮动元素的左边距在IE6上为所设定的左边距的两倍。这个问题只会发生在浮动行的第一个浮动元素上。准确的说：应该是每一行的第一个元素都会受此影响。<br>为了解决该问题，需要给浮动元素添加属性display: inline，即可解决。</p>
 </li>
@@ -558,11 +561,15 @@
 </li>
 <li><p>注册所有配置的插件,好让插件监听webpack构建生命周期的事件节点,并作出响应;</p>
 </li>
+<li><p>从配置文件中的入口文件entry开始解析文件,构建AST,找出每个文件依赖的文件,递归下去;</p>
+</li>
+<li><p>在解析文件递归过程中根据文件类型和对应的loader配置找出合适的插件进行解析;</p>
+</li>
+<li><p>递归结束后得到每个文件的最终结果,根据entry配置生成代码块chunk;</p>
+</li>
+<li><p>输出所有chunk到文件系统</p>
+</li>
 </ol>
-<p>3.从配置文件中的入口文件entry开始解析文件,构建AST,找出每个文件依赖的文件,递归下去;</p>
-<p>4.在解析文件递归过程中根据文件类型和对应的loader配置找出合适的插件进行解析;</p>
-<p>5.递归结束后得到每个文件的最终结果,根据entry配置生成代码块chunk;</p>
-<p>6.输出所有chunk到文件系统</p>
 
       
     </div>
