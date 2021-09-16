@@ -122,7 +122,7 @@
 <meta property="og:site_name" content="挪威的森林">
 <meta property="og:description" content="整理了一下 git等 的常用命令">
 <meta property="og:locale" content="chinese">
-<meta property="og:updated_time" content="2021-01-11T02:35:36.863Z">
+<meta property="og:updated_time" content="2021-09-16T03:12:43.855Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git常用命令">
 <meta name="twitter:description" content="整理了一下 git等 的常用命令">
@@ -366,7 +366,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2021-01-11 10:35:36" itemprop="dateModified" datetime="2021-01-11T10:35:36+08:00">2021-01-11</time>
+                <time title="Modified: 2021-09-16 11:12:43" itemprop="dateModified" datetime="2021-09-16T11:12:43+08:00">2021-09-16</time>
               
             
           </span>
@@ -423,7 +423,8 @@
 <h3 id="打开ssh-agent"><a href="#打开ssh-agent" class="headerlink" title="打开ssh-agent"></a>打开ssh-agent</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eval $(ssh-agent -s)</span><br></pre></td></tr></table></figure>
 <h3 id="添加私钥"><a href="#添加私钥" class="headerlink" title="添加私钥"></a>添加私钥</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-add ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
 <h3 id="创建或修改config文件"><a href="#创建或修改config文件" class="headerlink" title="创建或修改config文件"></a>创建或修改config文件</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>github  </span><br><span class="line">Host github.com #别名</span><br><span class="line">HostName github.com #域名或ip</span><br><span class="line">User 用户名</span><br><span class="line">IdentityFile ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
-<h3 id="设置或删除git全局用户名和邮箱"><a href="#设置或删除git全局用户名和邮箱" class="headerlink" title="设置或删除git全局用户名和邮箱"></a>设置或删除git全局用户名和邮箱</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git config --global --unset user.name</span><br><span class="line">git config --global --unset user.email</span><br><span class="line">git config user.name "yourname"</span><br><span class="line">git config user.email "youremail"</span><br></pre></td></tr></table></figure>
+<h3 id="设置或删除git全局用户名和邮箱"><a href="#设置或删除git全局用户名和邮箱" class="headerlink" title="设置或删除git全局用户名和邮箱"></a>设置或删除git全局用户名和邮箱</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git config --global --unset user.name</span><br><span class="line">git config --global --unset user.email</span><br><span class="line">git config --global user.name "yourname"</span><br><span class="line">git config --global user.email "youremail"</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
 <h3 id="查看远程仓库"><a href="#查看远程仓库" class="headerlink" title="查看远程仓库"></a>查看远程仓库</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
 <h3 id="添加远程仓库"><a href="#添加远程仓库" class="headerlink" title="添加远程仓库"></a>添加远程仓库</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin [地址]</span><br></pre></td></tr></table></figure>
 <h3 id="拉取和提交"><a href="#拉取和提交" class="headerlink" title="拉取和提交"></a>拉取和提交</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin master #拉取远程仓库，但不会自动merge</span><br><span class="line"></span><br><span class="line">git pull origin master #拉取远程仓库，并合并到当前分支</span><br><span class="line">git pull origin master --allow-unrelated-histories #让本地仓库和远程仓库链接上，并拉取远程仓库</span><br><span class="line"></span><br><span class="line">git pull = git fetch + git merge</span><br><span class="line"></span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
