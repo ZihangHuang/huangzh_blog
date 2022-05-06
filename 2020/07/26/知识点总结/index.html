@@ -122,7 +122,7 @@
 <meta property="og:site_name" content="挪威的森林">
 <meta property="og:description" content="常用知识点">
 <meta property="og:locale" content="chinese">
-<meta property="og:updated_time" content="2022-04-13T11:49:51.276Z">
+<meta property="og:updated_time" content="2022-05-06T12:56:05.200Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="知识点总结">
 <meta name="twitter:description" content="常用知识点">
@@ -366,7 +366,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-04-13 19:49:51" itemprop="dateModified" datetime="2022-04-13T19:49:51+08:00">2022-04-13</time>
+                <time title="Modified: 2022-05-06 20:56:05" itemprop="dateModified" datetime="2022-05-06T20:56:05+08:00">2022-05-06</time>
               
             
           </span>
@@ -494,7 +494,7 @@
 <h3 id="异步脚本"><a href="#异步脚本" class="headerlink" title="异步脚本"></a>异步脚本</h3><p><code>&lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;</code></p>
 <p>没有 defer 或 async，浏览器会立即加载并执行指定的脚本，“立即”指的是在渲染该 script 标签之下的文档元素之前，也就是说不等待后续载入的文档元素，读到就加载并执行。</p>
 <p><code>&lt;script async src=&quot;script.js&quot;&gt;&lt;/script&gt;</code></p>
-<p>有 async，加载和渲染后续文档元素的过程将和 script.js 的加载与执行并行进行（异步）。乱序执行，不管你声明的顺序如何，只要它加载完了就会立刻执行。</p>
+<p>有 async，加载和渲染后续文档元素的过程将和 script.js 的加载并行（异步）。是乱序执行，不管你声明的顺序如何，只要它加载完了就会立刻执行，执行还是会堵塞文档解析。</p>
 <p><code>&lt;script defer src=&quot;myscript.js&quot;&gt;&lt;/script&gt;</code></p>
 <p>有 defer，加载后续文档元素的过程将和 script.js 的加载并行进行（异步），但是 script.js 的执行要在所有元素解析完成之后，DOMContentLoaded 事件触发之前完成。会按照加载顺序执行脚本。</p>
 <h3 id="文件顺序"><a href="#文件顺序" class="headerlink" title="文件顺序"></a>文件顺序</h3><p><code>为什么通常推荐将 CSS &lt;link&gt; 放置在 &lt;head&gt;&lt;/head&gt; 之间，而将 JS &lt;script&gt; 放置在 &lt;/body&gt; 之前？你知道有哪些例外吗？</code></p>
