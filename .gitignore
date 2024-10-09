@@ -8,5 +8,6 @@ yarn-error.log*
 .deploy_git
 node_modules/
 public
+db.json
 
 .npm
