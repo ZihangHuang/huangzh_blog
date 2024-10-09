@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="chinese">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+  
+  
+    
+    
+  <script src="/huangzh_blog/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/huangzh_blog/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/huangzh_blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/huangzh_blog/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/huangzh_blog/images/apple-touch-icon-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/huangzh_blog/images/favicon-32x32-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/huangzh_blog/images/favicon-16x16-next.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/huangzh_blog/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/huangzh_blog/',
+    scheme: 'Muse',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="整理了一下 git等 的常用命令">
+<meta name="keywords" content="git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git常用命令">
+<meta property="og:url" content="https://zihanghuang.github.io/huangzh_blog/2018/05/21/git常用命令/index.html">
+<meta property="og:site_name" content="挪威的森林">
+<meta property="og:description" content="整理了一下 git等 的常用命令">
+<meta property="og:locale" content="chinese">
+<meta property="og:updated_time" content="2021-09-16T03:12:43.855Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git常用命令">
+<meta name="twitter:description" content="整理了一下 git等 的常用命令">
+
+
+
+
+
+
+  <link rel="canonical" href="https://zihanghuang.github.io/huangzh_blog/2018/05/21/git常用命令/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>git常用命令 | 挪威的森林</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="chinese">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/huangzh_blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">挪威的森林</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">我以为自己这一生的光亮，就只有自己周围的那几许，而实际上，就像这小木屋里的灯光一样，远比我想象得多得多。而且，那些光芒似乎并不跟从我的意识，它们就像这灯火一般，兀自在各处闪亮，将我的生命延续下去。</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/huangzh_blog/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/huangzh_blog/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/huangzh_blog/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/huangzh_blog/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zihanghuang.github.io/huangzh_blog/huangzh_blog/2018/05/21/git常用命令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="QWERTY">
+      <meta itemprop="description" content="并刀如水，吴盐胜雪">
+      <meta itemprop="image" content="/huangzh_blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="挪威的森林">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">git常用命令
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-21 22:39:17" itemprop="dateCreated datePublished" datetime="2018-05-21T22:39:17+08:00">2018-05-21</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2021-09-16 11:12:43" itemprop="dateModified" datetime="2021-09-16T11:12:43+08:00">2021-09-16</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/huangzh_blog/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>整理了一下 git等 的常用命令</p>
+<a id="more"></a>
+<h3 id="生成ssh-key"><a href="#生成ssh-key" class="headerlink" title="生成ssh key"></a>生成ssh key</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C "yourmail@gmail.com"</span><br></pre></td></tr></table></figure>
+<h3 id="打开ssh-agent"><a href="#打开ssh-agent" class="headerlink" title="打开ssh-agent"></a>打开ssh-agent</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eval $(ssh-agent -s)</span><br></pre></td></tr></table></figure>
+<h3 id="添加私钥"><a href="#添加私钥" class="headerlink" title="添加私钥"></a>添加私钥</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-add ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
+<h3 id="创建或修改config文件"><a href="#创建或修改config文件" class="headerlink" title="创建或修改config文件"></a>创建或修改config文件</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>github  </span><br><span class="line">Host github.com #别名</span><br><span class="line">HostName github.com #域名或ip</span><br><span class="line">User 用户名</span><br><span class="line">IdentityFile ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
+<h3 id="设置或删除git全局用户名和邮箱"><a href="#设置或删除git全局用户名和邮箱" class="headerlink" title="设置或删除git全局用户名和邮箱"></a>设置或删除git全局用户名和邮箱</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git config --global --unset user.name</span><br><span class="line">git config --global --unset user.email</span><br><span class="line">git config --global user.name "yourname"</span><br><span class="line">git config --global user.email "youremail"</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<h3 id="查看远程仓库"><a href="#查看远程仓库" class="headerlink" title="查看远程仓库"></a>查看远程仓库</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
+<h3 id="添加远程仓库"><a href="#添加远程仓库" class="headerlink" title="添加远程仓库"></a>添加远程仓库</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin [地址]</span><br></pre></td></tr></table></figure>
+<h3 id="拉取和提交"><a href="#拉取和提交" class="headerlink" title="拉取和提交"></a>拉取和提交</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin master #拉取远程仓库，但不会自动merge</span><br><span class="line"></span><br><span class="line">git pull origin master #拉取远程仓库，并合并到当前分支</span><br><span class="line">git pull origin master --allow-unrelated-histories #让本地仓库和远程仓库链接上，并拉取远程仓库</span><br><span class="line"></span><br><span class="line">git pull = git fetch + git merge</span><br><span class="line"></span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+<h3 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD^ #回退到上版本，不会重置工作区，会撤销git add .</span><br><span class="line">git reset --mixed HEAD^    #默认形式，和 git reset HEAD^ 一样</span><br><span class="line">git reset --hard HEAD^    #回退到上版本，会重置工作区，会撤销git add .</span><br><span class="line">git reset --soft HEAD^    #回退到上版本，不会重置工作区，不会撤销git add .</span><br><span class="line"></span><br><span class="line">git reset --hard HEAD^^    #回退到上上版本</span><br><span class="line">git reset --hard [commit] #回退到某个版本号</span><br><span class="line">git log   #查看提交日记</span><br><span class="line"></span><br><span class="line">git push origin [分支名] -f </span><br><span class="line"><span class="meta">#</span>将回退同步到远程仓库，本地分支回滚后，版本将落后远程分支，必须使用强制推送覆盖远程分支</span><br><span class="line"></span><br><span class="line">git reset --hard origin/分支 #用git reset撤回了提交，然后同步到了远端仓库，其他人可以用这个强制和远程版本一致，但是不建议使用</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>用<code>git reset --hard HEAD^</code> 回退到某一个以前版本后，再 git log 已经看不到新的版本。如果想撤销回退，就必须找到 append GPL 的 commit id。<br>当你命令行界面还没关闭时，你可以往上看那个新版本的 commit id，然后再<code>git reset --hard 版本号</code>。<br>如果已经关了界面，Git 提供了一个命令<code>git reflog</code>用来记录当前分支的提交记录，你可以找到那个新版本的 commit id。</p>
+</blockquote>
+<h3 id="撤销命令"><a href="#撤销命令" class="headerlink" title="撤销命令"></a>撤销命令</h3><p>把文件在工作区的修改全部撤销，这里有两种情况：<br>一种是文件自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；<br>一种是文件已经 add 到暂存区后，又作了修改，要先<code>git reset [file]</code>，重置暂存区的文件，与上次commit保持一致，然后再<code>git checkout -- [file]</code>，撤销修改。</p>
+<p>或者这两步可以用<code>git reset --hard</code>代替，但会撤销全部文件。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git checkout [file] #重置工作区文件</span><br><span class="line">git checkout . #重置工作区全部文件</span><br><span class="line">git reset [file] #重置暂存区的文件，与上一次commit保持一致，但工作区不变，是下面的简写形式</span><br><span class="line">git reset --mixed HEAD [file]</span><br></pre></td></tr></table></figure>
+<h3 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">git branch -a #查看包括远程仓库的所有分支，如果远程仓库有了新分支，要先git pull拉下来</span><br><span class="line"></span><br><span class="line">git checkout -b haha #创建新分支haha</span><br><span class="line"></span><br><span class="line">git branch "本地新建分支名" "远程分支名" #本地新建分支和远程分支关联起来</span><br><span class="line"></span><br><span class="line">git checkout master #切换到主分支</span><br><span class="line"></span><br><span class="line">git merge dev #合并</span><br><span class="line"></span><br><span class="line">git rebase master #变基，一般用在开发分支合并master分支的修改，和merge的区别是产生的历史记录是直线的，比较简洁</span><br><span class="line"></span><br><span class="line">git branch -d dev #删除dev分支</span><br><span class="line"></span><br><span class="line">git push origin -d dev # 删除远程分支</span><br><span class="line"></span><br><span class="line">git branch -m "旧分支名" "新分支名"</span><br></pre></td></tr></table></figure>
+<h3 id="查看修改内容"><a href="#查看修改内容" class="headerlink" title="查看修改内容"></a>查看修改内容</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git diff #查看暂存区和工作区的差异</span><br><span class="line">git diff --cached #查看暂存区和上一个commit的差异</span><br><span class="line">git diff --name-only --diff-filter=U #查看冲突文件</span><br></pre></td></tr></table></figure>
+<h3 id="git-stash"><a href="#git-stash" class="headerlink" title="git stash"></a>git stash</h3><p>假如你在本地新建了一个dev分支，用于开发新功能。然后master分支有bug需要处理。你不想把还没完成的功能commit，但是不commit的话切换到master分支时依旧有dev分支的修改。这时候就可以在dev分支使用git stash，把修改内容保存到stash中，这样切换到master分支时，就会保持和原来的一致。<br>注意：需要<code>git add</code>后才能<code>git stash</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">git stash #直接把代码保存到stash</span><br><span class="line">git stash save "message" #保存到stash，并加上注释（不包含新文件）</span><br><span class="line">git stash save -a "message" #保存到stash，并加上注释（包含新文件）</span><br><span class="line"></span><br><span class="line">git stash list #查看所有stash</span><br><span class="line"></span><br><span class="line">git stash pop #弹出stash里最后一个存储</span><br><span class="line">git stash pop stash@&#123;n&#125; #弹出stash里指定的存储</span><br><span class="line">git stash apply #弹出stash里最后一个存储，但stash里依旧存在</span><br><span class="line">git stash apply stash@&#123;n&#125; #弹出stash里指定的存储，但stash里依旧存在</span><br><span class="line"></span><br><span class="line">git stash drop stash@&#123;n&#125; #删除指定的stash</span><br><span class="line">git stash clear #清空所有stash</span><br></pre></td></tr></table></figure>
+<h3 id="git-tag"><a href="#git-tag" class="headerlink" title="git tag"></a>git tag</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">git tag &lt;name&gt; #新建一个标签，默认为HEAD，也可以指定一个commit id</span><br><span class="line"></span><br><span class="line">git tag -a &lt;tagname&gt; -m "blablabla..." #可以指定标签信息</span><br><span class="line"></span><br><span class="line">git tag #可以查看所有标签</span><br><span class="line"></span><br><span class="line">git tag -d &lt;name&gt; #删除标签</span><br><span class="line"></span><br><span class="line">git push origin &lt;tagname&gt; #推送tag到远程仓库</span><br><span class="line"></span><br><span class="line">git push origin --tags #一次性推送全部尚未推送到远程的本地标签</span><br><span class="line"></span><br><span class="line">git push origin :refs/tags/标签名  #删除远程标签(要先删除本地标签)</span><br></pre></td></tr></table></figure>
+<h3 id="代码提交流程"><a href="#代码提交流程" class="headerlink" title="代码提交流程"></a>代码提交流程</h3><ol>
+<li>将本地修改的代码切换到一条本地新分支上（<code>git checkout -b dev</code>），注意切换前保证本地dev分支不存在</li>
+<li>在本地dev分支将代码追踪（<code>git add .</code>）</li>
+<li>在本地dev分支将代码提交（<code>git commit</code>）</li>
+<li>完成提交后，切换到本地master分支，此时的本地master分支应该是干净无任何修改的（<code>git checkout master</code>）</li>
+<li>在本地master分支上拉取远程master分支最新代码（<code>git pull</code>）</li>
+<li>切换到本地dev分支（<code>git checkout dev</code>），合并本地master分支（<code>git rebase master</code>），若有冲突就解决冲突并追踪（<code>git add .</code>），之后继续合并（<code>git rebase --continue</code>），直至代码完全合并</li>
+<li>切换到本地master分支（<code>git checkout master</code>），然后合并本地dev分支（<code>git merge dev</code>），注意合之前一定要保证本地dev分支是干净无修改的</li>
+<li>合并完成后，再推到远程master分支（<code>git push origin master</code>）</li>
+<li>清除本地dev分支（<code>git branch -d dev</code>），这一步根据自己实际情况选择是否清除</li>
+</ol>
+<!-- 如果post_asset_folder为false，图片统一放在source/images文件夹，用![](/images/image.jpg)引用
+如果post_asset_folder为true，图片放在跟文章对应的同名文件夹的assets文件夹即可，引用语法如下,但每次新建文章都会创建对应的同名文件夹.
+ –&gt;
+-->
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/huangzh_blog/tags/git/" rel="tag"># git</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/huangzh_blog/2018/05/26/防抖和节流/" rel="prev" title="防抖和节流">
+                防抖和节流 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zOTAyNS8xNTU1Mg=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">QWERTY</p>
+              <p class="site-description motion-element" itemprop="description">并刀如水，吴盐胜雪</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/huangzh_blog/archives/">
+                
+                    <span class="site-state-item-count">25</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/huangzh_blog/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/huangzh_blog/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/ZihangHuang" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://lynhao.github.io/" title="LinHaW" target="_blank">LinHaW</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://violetkiss.cn/" title="VioletKiss" target="_blank">VioletKiss</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成ssh-key"><span class="nav-number">1.</span> <span class="nav-text">生成ssh key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#打开ssh-agent"><span class="nav-number">2.</span> <span class="nav-text">打开ssh-agent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加私钥"><span class="nav-number">3.</span> <span class="nav-text">添加私钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建或修改config文件"><span class="nav-number">4.</span> <span class="nav-text">创建或修改config文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置或删除git全局用户名和邮箱"><span class="nav-number">5.</span> <span class="nav-text">设置或删除git全局用户名和邮箱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看远程仓库"><span class="nav-number">6.</span> <span class="nav-text">查看远程仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加远程仓库"><span class="nav-number">7.</span> <span class="nav-text">添加远程仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拉取和提交"><span class="nav-number">8.</span> <span class="nav-text">拉取和提交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#版本回退"><span class="nav-number">9.</span> <span class="nav-text">版本回退</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销命令"><span class="nav-number">10.</span> <span class="nav-text">撤销命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分支"><span class="nav-number">11.</span> <span class="nav-text">分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看修改内容"><span class="nav-number">12.</span> <span class="nav-text">查看修改内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-stash"><span class="nav-number">13.</span> <span class="nav-text">git stash</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-tag"><span class="nav-number">14.</span> <span class="nav-text">git tag</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码提交流程"><span class="nav-number">15.</span> <span class="nav-text">代码提交流程</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2024</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">QWERTY</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.3.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/huangzh_blog/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/huangzh_blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/huangzh_blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/huangzh_blog/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/huangzh_blog/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/huangzh_blog/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/huangzh_blog/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/huangzh_blog/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
